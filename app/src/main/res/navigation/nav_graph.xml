@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/citizenshipNumberFragment">
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.fuentescreations.vacunatepbarecreation.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" />
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.fuentescreations.vacunatepbarecreation.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" />
+    <fragment
+        android:id="@+id/termsAndConditionsFragment"
+        android:name="com.fuentescreations.vacunatepbarecreation.TermsAndConditionsFragment"
+        android:label="fragment_terms_and_conditions"
+        tools:layout="@layout/fragment_terms_and_conditions" />
+    <fragment
+        android:id="@+id/citizenshipNumberFragment"
+        android:name="com.fuentescreations.vacunatepbarecreation.CitizenshipNumberFragment"
+        android:label="fragment_citizenship_number"
+        tools:layout="@layout/fragment_citizenship_number" />
+</navigation>
