@@ -10,10 +10,11 @@
         <entry key="..\:/Users/Gonzalo/Documents/androidProjects/VacunatePBArecreation/app/src/main/res/layout/fragment_start.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Gonzalo/Documents/androidProjects/VacunatePBArecreation/app/src/main/res/layout/fragment_start_activity.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Gonzalo/Documents/androidProjects/VacunatePBArecreation/app/src/main/res/layout/fragment_terms_and_conditions.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/PDS SA/Desktop/Things/Vacunate-PBA-Recreation/app/src/main/res/layout/fragment_citizenship_number.xml" value="0.25" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
