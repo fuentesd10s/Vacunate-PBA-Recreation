@@ -30,7 +30,7 @@ class CitizenshipNumberFragment : Fragment(R.layout.fragment_citizenship_number)
             AlertDialog.Builder(requireContext())
                 .setView(
                     ImageView(requireContext()).apply {
-                        this.setImageResource(R.drawable.dni)
+                        this.setImageResource(R.drawable.citizenship_number)
                         this.adjustViewBounds = true
                     })
                 .setPositiveButton("Ok") { d, _ ->
