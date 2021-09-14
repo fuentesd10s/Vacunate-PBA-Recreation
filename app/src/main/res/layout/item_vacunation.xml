@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_margin="10dp">
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/black"
+        app:strokeWidth="0.5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="15dp"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -24,51 +30,67 @@
                 <com.google.android.material.chip.Chip
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Pendiente"
                     app:chipCornerRadius="5dp"
-                    app:iconStartPadding="5dp"
-                    app:chipIconSize="12dp"
                     app:chipIcon="@drawable/ic_point"
-                    android:text="Pendiente"/>
+                    app:chipIconSize="12dp"
+                    app:iconStartPadding="5dp" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:gravity="end"
                     android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="Primera dosis"
                     android:textColor="@color/black"
-                    android:text="Primera dosis"/>
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
                 android:drawablePadding="5dp"
                 android:gravity="center_vertical"
-                android:text="31/082021 16hs"
+                android:text="31/082021 - 16hs"
+                android:textColor="@color/black"
                 app:drawableStartCompat="@drawable/ic_calendar" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
                 android:drawablePadding="5dp"
                 android:gravity="center_vertical"
                 android:text="Hospital Materno infantil Dr. Florencio Escardo"
+                android:textColor="@color/black"
                 app:drawableStartCompat="@drawable/ic_hospital" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
                 android:drawablePadding="5dp"
                 android:gravity="center_vertical"
+                android:background="?attr/selectableItemBackground"
                 android:text="Carlos Alvear N° 1666 - TIGRE"
+                android:textColor="@color/black"
                 app:drawableStartCompat="@drawable/ic_location" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Quiero cancelar mi turno"
+                android:textAllCaps="false"
+                app:icon="@drawable/ic_calendar_cancel" />
 
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

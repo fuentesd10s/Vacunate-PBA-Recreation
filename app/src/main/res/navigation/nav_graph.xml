@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/citizenshipNumberFragment">
+    app:startDestination="@id/summaryFragment">
     <fragment
         android:id="@+id/startFragment"
         android:name="com.fuentescreations.vacunatepbarecreation.StartFragment"
@@ -24,4 +24,9 @@
         android:name="com.fuentescreations.vacunatepbarecreation.CitizenshipNumberFragment"
         android:label="fragment_citizenship_number"
         tools:layout="@layout/fragment_citizenship_number" />
+    <fragment
+        android:id="@+id/summaryFragment"
+        android:name="com.fuentescreations.vacunatepbarecreation.SummaryFragment"
+        android:label="fragment_summary"
+        tools:layout="@layout/fragment_summary" />
 </navigation>
