@@ -60,4 +60,7 @@ dependencies {
 
     //QR Scanner
     implementation "io.github.g00fy2.quickie:quickie-bundled:1.2.4"
+
+    //Maps
+    implementation "com.google.android.gms:play-services-maps:17.0.1"
 }

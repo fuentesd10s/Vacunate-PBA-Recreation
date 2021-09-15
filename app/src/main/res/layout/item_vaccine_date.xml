@@ -8,6 +8,8 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
         app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,6 +30,7 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.chip.Chip
+                    android:id="@+id/chipVaccineStatus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Pendiente"
@@ -37,6 +40,7 @@
                     app:iconStartPadding="5dp" />
 
                 <TextView
+                    android:id="@+id/tvVaccineDose"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -48,46 +52,58 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/tvDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:drawablePadding="5dp"
                 android:gravity="center_vertical"
-                android:text="31/082021 - 16hs"
+                android:text="31/082021 - 16:59 hs"
                 android:textColor="@color/black"
                 app:drawableStartCompat="@drawable/ic_calendar" />
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/lyToHide"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:drawablePadding="5dp"
-                android:gravity="center_vertical"
-                android:text="Hospital Materno infantil Dr. Florencio Escardo"
-                android:textColor="@color/black"
-                app:drawableStartCompat="@drawable/ic_hospital" />
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:drawablePadding="5dp"
-                android:gravity="center_vertical"
-                android:background="?attr/selectableItemBackground"
-                android:text="Carlos Alvear N° 1666 - TIGRE"
-                android:textColor="@color/black"
-                app:drawableStartCompat="@drawable/ic_location" />
+                <TextView
+                    android:id="@+id/tvHospitalName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"
+                    android:text="Hospital Materno infantil Dr. Florencio Escardo"
+                    android:textColor="@color/black"
+                    app:drawableStartCompat="@drawable/ic_hospital" />
 
-            <com.google.android.material.button.MaterialButton
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                android:text="Quiero cancelar mi turno"
-                android:textAllCaps="false"
-                app:icon="@drawable/ic_calendar_cancel" />
+                <TextView
+                    android:id="@+id/tvLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"
+                    android:text="Carlos Alvear N° 1666 - TIGRE"
+                    android:textColor="@color/black"
+                    app:drawableStartCompat="@drawable/ic_location" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCancelDate"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="Quiero cancelar mi turno"
+                    android:textAllCaps="false"
+                    app:icon="@drawable/ic_calendar_cancel" />
+            </LinearLayout>
+
 
         </LinearLayout>
 
