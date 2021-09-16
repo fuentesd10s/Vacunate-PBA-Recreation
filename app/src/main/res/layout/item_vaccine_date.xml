@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp">
+    android:layout_marginTop="10dp">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
@@ -15,13 +15,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:strokeColor="@color/black"
+        app:strokeColor="@color/md_grey_500"
         app:strokeWidth="0.5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
+            android:layout_margin="10dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -33,10 +33,14 @@
                     android:id="@+id/chipVaccineStatus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:clickable="false"
                     android:text="Pendiente"
+                    app:chipMinTouchTargetSize="0dp"
                     app:chipCornerRadius="5dp"
                     app:chipIcon="@drawable/ic_point"
-                    app:chipIconSize="12dp"
+                    app:chipIconSize="10dp"
+                    android:textSize="12sp"
+                    app:chipIconTint="@color/black"
                     app:iconStartPadding="5dp" />
 
                 <TextView
@@ -60,6 +64,7 @@
                 android:gravity="center_vertical"
                 android:text="31/082021 - 16:59 hs"
                 android:textColor="@color/black"
+                android:textSize="12sp"
                 app:drawableStartCompat="@drawable/ic_calendar" />
 
             <LinearLayout
@@ -74,9 +79,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:drawablePadding="5dp"
+                    android:ellipsize="end"
                     android:gravity="center_vertical"
+                    android:maxLines="2"
                     android:text="Hospital Materno infantil Dr. Florencio Escardo"
                     android:textColor="@color/black"
+                    android:textSize="12sp"
                     app:drawableStartCompat="@drawable/ic_hospital" />
 
                 <TextView
@@ -84,23 +92,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:background="?attr/selectableItemBackground"
                     android:drawablePadding="5dp"
+                    android:ellipsize="end"
                     android:gravity="center_vertical"
+                    android:maxLines="2"
                     android:text="Carlos Alvear N° 1666 - TIGRE"
                     android:textColor="@color/black"
+                    android:textSize="12sp"
                     app:drawableStartCompat="@drawable/ic_location" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnCancelDate"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="10dp"
                     android:insetTop="0dp"
                     android:insetBottom="0dp"
+                    android:textSize="12sp"
                     android:text="Quiero cancelar mi turno"
                     android:textAllCaps="false"
+                    android:layout_gravity="center_horizontal"
                     app:icon="@drawable/ic_calendar_cancel" />
             </LinearLayout>
 

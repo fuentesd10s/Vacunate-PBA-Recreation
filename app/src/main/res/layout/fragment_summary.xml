@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".SummaryFragment">
 
@@ -22,10 +23,18 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="¡Hola, Gonzalo Rafael!\nPlan de Vacacunación COVID-19"
+                android:text="¡Hola, Gonzalo Rafael!"
+                android:textColor="@color/md_grey_800"
+                android:textSize="22sp"
                 android:layout_marginTop="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/md_grey_800"
+                android:text="Plan de Vacacunación COVID-19" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvVaccineDates"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:nestedScrollingEnabled="false"
@@ -40,6 +49,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:enabled="false"
+        android:layout_marginTop="10dp"
         android:textAllCaps="false"
         android:text="Consultá nuevamente en 4:38"
         app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
