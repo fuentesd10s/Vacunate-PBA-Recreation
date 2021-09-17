@@ -53,13 +53,13 @@
             android:id="@+id/textField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:errorEnabled="true"
-            android:hint="Número de documento (Obligatorio)">
+            android:hint="Número de documento (Obligatorio)"
+            app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"/>
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -67,48 +67,28 @@
             android:id="@+id/textField2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:errorEnabled="true"
-            android:hint="Número de trámite (Obligatorio)">
+            android:hint="Número de trámite (Obligatorio)"
+            app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"/>
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/lyTramitNumber"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnHowToGetTramitNumber"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="¿Cómo obtengo mi número de trámite?"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            app:icon="@drawable/ic_help"
             android:layout_marginBottom="10dp"
-            android:background="?attr/selectableItemBackground"
-            android:padding="10dp">
-
-            <TextView
-                android:id="@+id/tv1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:drawablePadding="5dp"
-                android:gravity="center"
-                android:text="¿Cómo obtengo mi número de trámite?"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/ivHelp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/ivHelp"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:src="@drawable/ic_help"
-                app:layout_constraintBottom_toBottomOf="@+id/tv1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tv1" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            app:iconGravity="textEnd"
+            app:iconSize="18dp" />
 
         <LinearLayout
             android:id="@+id/lyGender"
@@ -120,6 +100,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sexo como figura en el DNI" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -155,8 +136,8 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
                     android:layout_marginStart="50dp"
+                    android:gravity="center"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -168,8 +149,8 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:adjustViewBounds="true"
-                        app:tint="@color/md_grey_700"
-                        android:src="@drawable/ic_man" />
+                        android:src="@drawable/ic_man"
+                        app:tint="@color/md_grey_700" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -199,10 +180,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
             android:background="@color/md_cyan_50"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:layout_marginBottom="5dp"
             android:paddingStart="20dp"
             android:paddingTop="5dp"
             android:paddingEnd="20dp"
@@ -242,9 +223,9 @@
         android:padding="160dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineStart"

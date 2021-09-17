@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".CitizenshipNumberFragment">
 
     <TextView
         android:id="@+id/tvTitleCitizenshipNumber"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
         android:lineSpacingExtra="5dp"
         android:text="Para acceder a más información usá la camára para escanear el QR o ingresá de tu número de ciudadanía, ambos se encuentran en tu credencial."
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/lyMiddleCitizienShipNumber"
         app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
         app:layout_constraintStart_toStartOf="@id/guidelineStart"
-        app:layout_constraintTop_toTopOf="@id/guidelineTop"/>
+        app:layout_constraintTop_toTopOf="@id/guidelineTop" />
 
     <LinearLayout
         android:id="@+id/lyMiddleCitizienShipNumber"
@@ -32,53 +32,33 @@
             android:id="@+id/tilCitizenshipNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:errorEnabled="true"
+            android:hint="Número de ciudadanía"
             app:counterEnabled="true"
             app:counterMaxLength="10"
-            app:endIconMode="custom"
             app:endIconDrawable="@drawable/ic_camera"
-            android:hint="Número de ciudadanía">
+            app:endIconMode="custom"
+            app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etCitizenshipNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxLength="10"
-                android:inputType="number"/>
+                android:inputType="number"
+                android:maxLength="10" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/lyTramitNumberCitizenshipNumber"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnHowToGetCitizenshipNumber"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="?attr/selectableItemBackground"
-            android:padding="10dp">
-
-            <TextView
-                android:id="@+id/tv1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:drawablePadding="5dp"
-                android:gravity="center"
-                android:text="¿Cómo obtengo mi número de trámite?"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/ivHelp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/ivHelp"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:src="@drawable/ic_help"
-                app:layout_constraintBottom_toBottomOf="@+id/tv1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tv1" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:text="¿Cómo obtengo mi número de ciudadanía?"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            app:icon="@drawable/ic_help"
+            app:iconGravity="textEnd"
+            app:iconSize="18dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -116,8 +96,8 @@
         android:id="@+id/tvBottomCitizienShipNumber"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
         android:text="Si no tenés tu número de ciudadanía acercate a tu centro de vacunación más cercano."
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
         app:layout_constraintStart_toStartOf="@id/guidelineStart"
@@ -151,8 +131,8 @@
         android:padding="160dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

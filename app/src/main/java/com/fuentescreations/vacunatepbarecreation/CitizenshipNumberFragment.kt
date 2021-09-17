@@ -26,7 +26,7 @@ class CitizenshipNumberFragment : Fragment(R.layout.fragment_citizenship_number)
 
         b = FragmentCitizenshipNumberBinding.bind(view)
 
-        b.lyTramitNumberCitizenshipNumber.setOnClickListener {
+        b.btnHowToGetCitizenshipNumber.setOnClickListener {
             AlertDialog.Builder(requireContext())
                 .setView(
                     ImageView(requireContext()).apply {

@@ -35,12 +35,12 @@
                     android:layout_height="wrap_content"
                     android:clickable="false"
                     android:text="Pendiente"
-                    app:chipMinTouchTargetSize="0dp"
+                    android:textSize="12sp"
                     app:chipCornerRadius="5dp"
                     app:chipIcon="@drawable/ic_point"
                     app:chipIconSize="10dp"
-                    android:textSize="12sp"
                     app:chipIconTint="@color/black"
+                    app:chipMinTouchTargetSize="0dp"
                     app:iconStartPadding="5dp" />
 
                 <TextView
@@ -55,67 +55,82 @@
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/tvDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:drawablePadding="5dp"
-                android:gravity="center_vertical"
-                android:text="31/082021 - 16:59 hs"
-                android:textColor="@color/black"
-                android:textSize="12sp"
-                app:drawableStartCompat="@drawable/ic_calendar" />
-
             <LinearLayout
-                android:id="@+id/lyToHide"
+                android:id="@+id/statusNotAvailable"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+
                 <TextView
-                    android:id="@+id/tvHospitalName"
+                    android:id="@+id/tvDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:drawablePadding="5dp"
-                    android:ellipsize="end"
                     android:gravity="center_vertical"
-                    android:maxLines="2"
-                    android:text="Hospital Materno infantil Dr. Florencio Escardo"
+                    android:text="31/082021 - 16:59 hs"
                     android:textColor="@color/black"
                     android:textSize="12sp"
-                    app:drawableStartCompat="@drawable/ic_hospital" />
+                    app:drawableStartCompat="@drawable/ic_calendar" />
 
-                <TextView
-                    android:id="@+id/tvLocation"
+                <LinearLayout
+                    android:id="@+id/statusAttendedOrCanceled"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:drawablePadding="5dp"
-                    android:ellipsize="end"
-                    android:gravity="center_vertical"
-                    android:maxLines="2"
-                    android:text="Carlos Alvear N° 1666 - TIGRE"
-                    android:textColor="@color/black"
-                    android:textSize="12sp"
-                    app:drawableStartCompat="@drawable/ic_location" />
+                    android:orientation="vertical">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnCancelDate"
-                    style="@style/Widget.MaterialComponents.Button.TextButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:insetTop="0dp"
-                    android:insetBottom="0dp"
-                    android:textSize="12sp"
-                    android:text="Quiero cancelar mi turno"
-                    android:textAllCaps="false"
-                    android:layout_gravity="center_horizontal"
-                    app:icon="@drawable/ic_calendar_cancel" />
+                    <TextView
+                        android:id="@+id/tvHospitalName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:drawablePadding="5dp"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="2"
+                        android:text="Hospital Materno infantil Dr. Florencio Escardo"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:drawableStartCompat="@drawable/ic_hospital" />
+
+                    <TextView
+                        android:id="@+id/tvLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:drawablePadding="5dp"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="2"
+                        android:text="Carlos Alvear N° 1666 - TIGRE"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:drawableStartCompat="@drawable/ic_location" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCancelDate"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:text="Quiero cancelar mi turno"
+                        android:textAllCaps="false"
+                        android:textSize="12sp"
+                        app:icon="@drawable/ic_calendar_cancel" />
+                </LinearLayout>
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/tvStatusNotAvailable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:text="Te damos la bienvenida al plan de Vacunación COVID-19.\n\nUna vez que las dosis esten disponibles y el cronograma de vacunación esté confirmado, recibirás una notificación.\n\n¡Muchas Gracias!"/>
 
         </LinearLayout>
 

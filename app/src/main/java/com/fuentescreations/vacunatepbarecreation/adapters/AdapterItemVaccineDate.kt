@@ -1,7 +1,9 @@
 package com.fuentescreations.vacunatepbarecreation.adapters
 
+import android.content.Context
 import android.content.res.ColorStateList
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
@@ -29,8 +31,9 @@ class AdapterItemVaccineDate(private val vaccineDateList: List<ModelVaccineDate>
 
     inner class ViewHolderVaccineDate(private val b: ItemVaccineDateBinding) :
         RecyclerView.ViewHolder(b.root) {
+        private val mContext = itemView.context
+
         fun bind(modelVaccineDate: ModelVaccineDate) {
-            val mContext = itemView.context
 
             b.chipVaccineStatus.text = modelVaccineDate.status.value
             b.tvVaccineDose.text = modelVaccineDate.dosesNumber.value
@@ -40,92 +43,62 @@ class AdapterItemVaccineDate(private val vaccineDateList: List<ModelVaccineDate>
 
             when (modelVaccineDate.status) {
                 VaccineDateStatus.ATTENDED -> {
-                    b.chipVaccineStatus.chipBackgroundColor = ColorStateList.valueOf(
-                        ContextCompat.getColor(
-                            mContext,
-                            R.color.md_blue_100
-                        )
-                    )
+                    b.chipVaccineStatus.chipBackgroundColor =
+                        ColorStateList.valueOf(getColor(R.color.md_blue_100))
+
                     b.chipVaccineStatus.chipIconTint = ColorStateList.valueOf(
-                        ContextCompat.getColor(
-                            mContext,
-                            R.color.md_blue_900
-                        )
+                        getColor(R.color.md_blue_900)
                     )
 
                     b.chipVaccineStatus.setTextColor(
-                        ContextCompat.getColor(
-                            mContext,
-                            R.color.md_blue_900
-                        )
+                        getColor(R.color.md_blue_900)
                     )
+
+                    b.statusAttendedOrCanceled.visibility = View.GONE
                 }
                 VaccineDateStatus.PENDING -> {
                     b.chipVaccineStatus.chipBackgroundColor = ColorStateList.valueOf(
-                        ContextCompat.getColor(
-                            mContext,
-                            R.color.md_orange_100
-                        )
+                        getColor(R.color.md_orange_100)
                     )
                     b.chipVaccineStatus.chipIconTint = ColorStateList.valueOf(
-                        ContextCompat.getColor(
-                            mContext,
-                            R.color.md_orange_900
-                        )
+                        getColor(R.color.md_orange_900)
                     )
 
                     b.chipVaccineStatus.setTextColor(
-                        ContextCompat.getColor(
-                            mContext,
-                            R.color.md_orange_900
-                        )
+                        getColor(R.color.md_orange_900)
                     )
                 }
                 VaccineDateStatus.CANCELLED -> {
                     b.chipVaccineStatus.chipBackgroundColor = ColorStateList.valueOf(
-                        ContextCompat.getColor(
-                            mContext,
-                            R.color.md_red_100
-                        )
+                        getColor(R.color.md_red_100)
                     )
                     b.chipVaccineStatus.chipIconTint = ColorStateList.valueOf(
-                        ContextCompat.getColor(
-                            mContext,
-                            R.color.md_red_900
-                        )
+                        getColor(R.color.md_red_900)
+                    )
+                    b.chipVaccineStatus.setTextColor(
+                        getColor(R.color.md_red_900)
                     )
 
-                    b.chipVaccineStatus.setTextColor(
-                        ContextCompat.getColor(
-                            mContext,
-                            R.color.md_red_900
-                        )
-                    )
+                    b.statusAttendedOrCanceled.visibility = View.GONE
                 }
                 VaccineDateStatus.NOT_AVAILABLE -> {
                     b.chipVaccineStatus.chipBackgroundColor = ColorStateList.valueOf(
-                        ContextCompat.getColor(
-                            mContext,
-                            R.color.md_grey_100
-                        )
+                        getColor(R.color.md_grey_100)
                     )
                     b.chipVaccineStatus.chipIconTint = ColorStateList.valueOf(
-                        ContextCompat.getColor(
-                            mContext,
-                            R.color.md_grey_700
-                        )
+                        getColor(R.color.md_grey_700)
                     )
 
                     b.chipVaccineStatus.setTextColor(
-                        ContextCompat.getColor(
-                            mContext,
-                            R.color.md_grey_700
-                        )
+                        getColor(R.color.md_grey_700)
                     )
+                    b.statusNotAvailable.visibility = View.GONE
+                    b.tvStatusNotAvailable.visibility = View.VISIBLE
                 }
             }
-
         }
+
+        private fun getColor(color: Int): Int = ContextCompat.getColor(mContext, color)
 
         private fun getDateFromMillis(milliSeconds: Long): String {
             val calendar = Calendar.getInstance().apply {

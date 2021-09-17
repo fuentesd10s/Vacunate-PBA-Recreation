@@ -18,7 +18,7 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
         super.onViewCreated(view, savedInstanceState)
         b = FragmentSignUpBinding.bind(view)
 
-        b.lyTramitNumber.setOnClickListener {
+        b.btnHowToGetTramitNumber.setOnClickListener {
 
             AlertDialog.Builder(requireContext())
                 .setTitle("El número de trámite se encuentra en el frente o dorso de tu documento.")
