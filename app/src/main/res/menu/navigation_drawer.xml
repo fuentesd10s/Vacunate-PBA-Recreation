@@ -5,7 +5,7 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/item1"
-            android:title="Incivo"
+            android:title="Inicio"
             android:icon="@drawable/ic_home"
             android:checked="true" />
         <item
