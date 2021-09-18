@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/group1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/item1"
+            android:title="Incivo"
+            android:icon="@drawable/ic_home"
+            android:checked="true" />
+        <item
+            android:icon="@drawable/ic_account"
+            android:title="Mis datos" />
+        <item
+            android:icon="@drawable/ic_calendar"
+            android:title="Mis turnos" />
+        <item
+            android:icon="@drawable/ic_vaccine"
+            android:title="Mis vacunas" />
+        <item
+            android:icon="@drawable/ic_tracking"
+            android:title="Seguimientos" />
+        <item
+            android:icon="@drawable/ic_logout"
+            android:title="Cerrar Sesión" />
+    </group>
+</menu>

@@ -130,6 +130,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:visibility="gone"
+                android:textSize="12sp"
                 android:text="Te damos la bienvenida al plan de Vacunación COVID-19.\n\nUna vez que las dosis esten disponibles y el cronograma de vacunación esté confirmado, recibirás una notificación.\n\n¡Muchas Gracias!"/>
 
         </LinearLayout>
