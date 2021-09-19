@@ -1,4 +1,4 @@
-package com.fuentescreations.vacunatepbarecreation
+package com.fuentescreations.vacunatepbarecreation.ui.fragments
 
 import android.app.AlertDialog
 import android.os.Bundle
@@ -6,11 +6,9 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.Toast
+import com.fuentescreations.vacunatepbarecreation.R
 import com.fuentescreations.vacunatepbarecreation.databinding.FragmentCitizenshipNumberBinding
 import io.github.g00fy2.quickie.QRResult
 import io.github.g00fy2.quickie.ScanCustomCode
@@ -19,7 +17,7 @@ import io.github.g00fy2.quickie.config.ScannerConfig
 class CitizenshipNumberFragment : Fragment(R.layout.fragment_citizenship_number) {
 
     private lateinit var b: FragmentCitizenshipNumberBinding
-    val scanCustomCode = registerForActivityResult(ScanCustomCode(), ::handleResult)
+    private val scanCustomCode = registerForActivityResult(ScanCustomCode(), ::handleResult)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

@@ -3,30 +3,40 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/summaryFragment">
+    app:startDestination="@id/myAccountFragment">
     <fragment
         android:id="@+id/startFragment"
-        android:name="com.fuentescreations.vacunatepbarecreation.StartFragment"
+        android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.StartFragment"
         android:label="fragment_start"
         tools:layout="@layout/fragment_start" />
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.fuentescreations.vacunatepbarecreation.SignUpFragment"
+        android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" />
     <fragment
         android:id="@+id/termsAndConditionsFragment"
-        android:name="com.fuentescreations.vacunatepbarecreation.TermsAndConditionsFragment"
+        android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.TermsAndConditionsFragment"
         android:label="fragment_terms_and_conditions"
         tools:layout="@layout/fragment_terms_and_conditions" />
     <fragment
         android:id="@+id/citizenshipNumberFragment"
-        android:name="com.fuentescreations.vacunatepbarecreation.CitizenshipNumberFragment"
+        android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.CitizenshipNumberFragment"
         android:label="fragment_citizenship_number"
         tools:layout="@layout/fragment_citizenship_number" />
     <fragment
         android:id="@+id/summaryFragment"
-        android:name="com.fuentescreations.vacunatepbarecreation.SummaryFragment"
+        android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.HomeFragment"
         android:label="fragment_summary"
-        tools:layout="@layout/fragment_summary" />
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/myAccountFragment"
+        android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.MyAccountFragment"
+        android:label="fragment_my_account"
+        tools:layout="@layout/fragment_my_account" />
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
 </navigation>

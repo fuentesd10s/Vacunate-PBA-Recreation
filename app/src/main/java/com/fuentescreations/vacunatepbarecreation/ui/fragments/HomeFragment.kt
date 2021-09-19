@@ -1,24 +1,25 @@
-package com.fuentescreations.vacunatepbarecreation
+package com.fuentescreations.vacunatepbarecreation.ui.fragments
 
 import android.os.Bundle
 import android.os.CountDownTimer
 import androidx.fragment.app.Fragment
 import android.view.View
+import com.fuentescreations.vacunatepbarecreation.R
 import com.fuentescreations.vacunatepbarecreation.adapters.AdapterItemVaccineDate
-import com.fuentescreations.vacunatepbarecreation.databinding.FragmentSummaryBinding
+import com.fuentescreations.vacunatepbarecreation.databinding.FragmentHomeBinding
 import com.fuentescreations.vacunatepbarecreation.models.ModelVaccineDate
 import com.fuentescreations.vacunatepbarecreation.models.getExample
 import java.text.SimpleDateFormat
 import java.util.*
 
-class SummaryFragment : Fragment(R.layout.fragment_summary) {
+class HomeFragment : Fragment(R.layout.fragment_home) {
 
-    private lateinit var b:FragmentSummaryBinding
+    private lateinit var b:FragmentHomeBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        b = FragmentSummaryBinding.bind(view)
+        b = FragmentHomeBinding.bind(view)
 
         setupBtnTimer()
         setupRv()

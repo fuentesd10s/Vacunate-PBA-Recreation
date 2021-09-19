@@ -4,23 +4,28 @@
         android:id="@+id/group1"
         android:checkableBehavior="single">
         <item
-            android:id="@+id/item1"
+            android:id="@+id/home"
             android:title="Inicio"
             android:icon="@drawable/ic_home"
             android:checked="true" />
         <item
+            android:id="@+id/myAccount"
             android:icon="@drawable/ic_account"
             android:title="Mis datos" />
         <item
+            android:id="@+id/myDates"
             android:icon="@drawable/ic_calendar"
             android:title="Mis turnos" />
         <item
+            android:id="@+id/myVaccines"
             android:icon="@drawable/ic_vaccine"
             android:title="Mis vacunas" />
         <item
+            android:id="@+id/tracking"
             android:icon="@drawable/ic_tracking"
             android:title="Seguimientos" />
         <item
+            android:id="@+id/logOut"
             android:icon="@drawable/ic_logout"
             android:title="Cerrar Sesión" />
     </group>
