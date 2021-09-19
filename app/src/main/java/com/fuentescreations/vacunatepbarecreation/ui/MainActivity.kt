@@ -28,13 +28,14 @@ class MainActivity : AppCompatActivity() {
             when(destination.id){
 
                 R.id.summaryFragment ->{
-                    b.drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
-                    b.topAppBar.show()
+                    showTopBarAndNavigationDrawer()
+                }
+                R.id.myAccountFragment ->{
+                    showTopBarAndNavigationDrawer()
                 }
 
                 else ->{
-                    b.drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
-                    b.topAppBar.hide()
+                    hideTopBarAndNavigationDrawer()
                 }
             }
         }
@@ -80,5 +81,14 @@ class MainActivity : AppCompatActivity() {
         b.topAppBar.setNavigationOnClickListener {
             b.drawerLayout.open()
         }
+    }
+
+    private fun showTopBarAndNavigationDrawer(){
+        b.drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
+        b.topAppBar.show()
+    }
+    private fun hideTopBarAndNavigationDrawer(){
+        b.drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+        b.topAppBar.hide()
     }
 }
