@@ -4,12 +4,12 @@
         android:id="@+id/group1"
         android:checkableBehavior="single">
         <item
-            android:id="@+id/home"
+            android:id="@+id/summaryFragment"
             android:title="Inicio"
             android:icon="@drawable/ic_home"
             android:checked="true" />
         <item
-            android:id="@+id/myAccount"
+            android:id="@+id/myAccountFragment"
             android:icon="@drawable/ic_account"
             android:title="Mis datos" />
         <item

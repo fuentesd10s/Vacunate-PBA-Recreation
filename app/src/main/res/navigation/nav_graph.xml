@@ -8,12 +8,16 @@
         android:id="@+id/startFragment"
         android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.StartFragment"
         android:label="fragment_start"
-        tools:layout="@layout/fragment_start" />
+        tools:layout="@layout/fragment_start" >
+
+    </fragment>
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.SignUpFragment"
         android:label="fragment_sign_up"
-        tools:layout="@layout/fragment_sign_up" />
+        tools:layout="@layout/fragment_sign_up" >
+
+    </fragment>
     <fragment
         android:id="@+id/termsAndConditionsFragment"
         android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.TermsAndConditionsFragment"
@@ -23,20 +27,28 @@
         android:id="@+id/citizenshipNumberFragment"
         android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.CitizenshipNumberFragment"
         android:label="fragment_citizenship_number"
-        tools:layout="@layout/fragment_citizenship_number" />
+        tools:layout="@layout/fragment_citizenship_number" >
+
+    </fragment>
     <fragment
         android:id="@+id/summaryFragment"
         android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.HomeFragment"
         android:label="fragment_summary"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+
+    </fragment>
     <fragment
         android:id="@+id/myAccountFragment"
         android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.MyAccountFragment"
         android:label="fragment_my_account"
-        tools:layout="@layout/fragment_my_account" />
+        tools:layout="@layout/fragment_my_account" >
+
+    </fragment>
     <fragment
         android:id="@+id/notificationFragment"
         android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.NotificationFragment"
         android:label="fragment_notification"
-        tools:layout="@layout/fragment_notification" />
+        tools:layout="@layout/fragment_notification" >
+
+    </fragment>
 </navigation>

@@ -3,9 +3,12 @@ package com.fuentescreations.vacunatepbarecreation.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupWithNavController
 import com.fuentescreations.vacunatepbarecreation.R
 import com.fuentescreations.vacunatepbarecreation.databinding.ActivityMainBinding
 import com.fuentescreations.vacunatepbarecreation.utils.hide
@@ -27,10 +30,7 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, arguments ->
             when(destination.id){
 
-                R.id.summaryFragment ->{
-                    showTopBarAndNavigationDrawer()
-                }
-                R.id.myAccountFragment ->{
+                R.id.summaryFragment, R.id.myAccountFragment ->{
                     showTopBarAndNavigationDrawer()
                 }
 
@@ -41,28 +41,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         b.navView.setNavigationItemSelectedListener {
-
-            when (it.itemId) {
-                R.id.home -> {
-                    Toast.makeText(this, "Inicio", Toast.LENGTH_SHORT).show()
-                }
-                R.id.myAccount -> {
-                    Toast.makeText(this, "My Account", Toast.LENGTH_SHORT).show()
-                }
-                R.id.myDates -> {
-                    Toast.makeText(this, "My dates", Toast.LENGTH_SHORT).show()
-                }
-                R.id.myVaccines -> {
-                    Toast.makeText(this, "My Vaccines", Toast.LENGTH_SHORT).show()
-                }
-                R.id.tracking -> {
-                    Toast.makeText(this, "Tracking", Toast.LENGTH_SHORT).show()
-                }
-                R.id.logOut -> {
-                    Toast.makeText(this, "Log out", Toast.LENGTH_SHORT).show()
-                }
-            }
-
             it.isChecked = true
             b.drawerLayout.close()
             true
@@ -81,6 +59,16 @@ class MainActivity : AppCompatActivity() {
         b.topAppBar.setNavigationOnClickListener {
             b.drawerLayout.open()
         }
+        setupDrawerLayout()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return NavigationUI.navigateUp(navController, b.drawerLayout)
+    }
+
+    private fun setupDrawerLayout() {
+        b.navView.setupWithNavController(navController)
+//        NavigationUI.setupActionBarWithNavController(this, navController, b.drawerLayout)
     }
 
     private fun showTopBarAndNavigationDrawer(){
@@ -90,5 +78,11 @@ class MainActivity : AppCompatActivity() {
     private fun hideTopBarAndNavigationDrawer(){
         b.drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
         b.topAppBar.hide()
+    }
+    override fun onBackPressed() {
+        if (b.drawerLayout.isDrawerOpen(GravityCompat.START))
+            b.drawerLayout.close()
+        else super.onBackPressed()
+
     }
 }
