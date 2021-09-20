@@ -7,6 +7,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.fuentescreations.vacunatepbarecreation.R
@@ -60,15 +61,19 @@ class MainActivity : AppCompatActivity() {
             b.drawerLayout.open()
         }
         setupDrawerLayout()
+
+        //val appBarConfiguration = AppBarConfiguration(navController.graph)
+        //b.topAppBar.setupWithNavController(navController,appBarConfiguration)
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        return NavigationUI.navigateUp(navController, b.drawerLayout)
-    }
+    //override fun onSupportNavigateUp(): Boolean {
+    //    return NavigationUI.navigateUp(navController, b.drawerLayout)
+    //}
 
     private fun setupDrawerLayout() {
         b.navView.setupWithNavController(navController)
-//        NavigationUI.setupActionBarWithNavController(this, navController, b.drawerLayout)
+        val appBarConfiguration = AppBarConfiguration(navController.graph)
+        b.topAppBar.setupWithNavController(navController, b.drawerLayout)
     }
 
     private fun showTopBarAndNavigationDrawer(){
@@ -83,6 +88,5 @@ class MainActivity : AppCompatActivity() {
         if (b.drawerLayout.isDrawerOpen(GravityCompat.START))
             b.drawerLayout.close()
         else super.onBackPressed()
-
     }
 }
