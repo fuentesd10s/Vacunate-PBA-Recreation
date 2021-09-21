@@ -7,9 +7,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupWithNavController
+import androidx.navigation.ui.*
 import com.fuentescreations.vacunatepbarecreation.R
 import com.fuentescreations.vacunatepbarecreation.databinding.ActivityMainBinding
 import com.fuentescreations.vacunatepbarecreation.utils.hide
@@ -19,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var b: ActivityMainBinding
     private lateinit var navController: NavController
+    private lateinit var appBarConfiguration : AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,16 +27,14 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
 
-        navController.addOnDestinationChangedListener { _, destination, arguments ->
+        navController.addOnDestinationChangedListener { _, destination, _ ->
             when(destination.id){
 
-                R.id.summaryFragment, R.id.myAccountFragment ->{
+                R.id.summaryFragment,
+                R.id.myAccountFragment ->
                     showTopBarAndNavigationDrawer()
-                }
 
-                else ->{
-                    hideTopBarAndNavigationDrawer()
-                }
+                else -> hideTopBarAndNavigationDrawer()
             }
         }
 
@@ -60,28 +57,32 @@ class MainActivity : AppCompatActivity() {
         b.topAppBar.setNavigationOnClickListener {
             b.drawerLayout.open()
         }
-        setupDrawerLayout()
 
-        //val appBarConfiguration = AppBarConfiguration(navController.graph)
-        //b.topAppBar.setupWithNavController(navController,appBarConfiguration)
+        setupNavigationView()
     }
 
-    //override fun onSupportNavigateUp(): Boolean {
-    //    return NavigationUI.navigateUp(navController, b.drawerLayout)
-    //}
+    private fun setupNavigationView() {
+        appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.summaryFragment,
+                R.id.myAccountFragment,
+            ), b.drawerLayout
+        )
 
-    private fun setupDrawerLayout() {
+        b.topAppBar.setupWithNavController(navController, appBarConfiguration)
         b.navView.setupWithNavController(navController)
-        val appBarConfiguration = AppBarConfiguration(navController.graph)
-        b.topAppBar.setupWithNavController(navController, b.drawerLayout)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
     private fun showTopBarAndNavigationDrawer(){
-        b.drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
+        b.drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
         b.topAppBar.show()
     }
     private fun hideTopBarAndNavigationDrawer(){
-        b.drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+        b.drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
         b.topAppBar.hide()
     }
     override fun onBackPressed() {
