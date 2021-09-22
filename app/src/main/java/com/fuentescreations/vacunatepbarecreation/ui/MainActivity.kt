@@ -31,7 +31,8 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
 
-                R.id.myAccountFragment, R.id.homeFragment -> {
+                R.id.myAccountFragment,
+                R.id.homeFragment -> {
                     hideNotificationIcon()
                     showTopBarAndNavigationDrawer()
                 }

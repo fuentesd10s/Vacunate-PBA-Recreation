@@ -14,7 +14,7 @@ import java.util.*
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
-    private lateinit var b:FragmentHomeBinding
+    private lateinit var b: FragmentHomeBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -27,14 +27,15 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private fun setupRv() {
         val vaccineDateList = mutableListOf<ModelVaccineDate>()
-        for (i in 1.. 10){
+        for (i in 1..5) {
             vaccineDateList.add(ModelVaccineDate().getExample())
         }
-        b.rvVaccineDates.adapter= AdapterItemVaccineDate(vaccineDateList)
+        b.rvAttendedVaccineDates.adapter = AdapterItemVaccineDate(vaccineDateList)
+        b.rvPendingVaccineDates.adapter = AdapterItemVaccineDate(vaccineDateList)
     }
 
     private fun setupBtnTimer() {
-        val timer = object: CountDownTimer(10000, 1000) {
+        val timer = object : CountDownTimer(10000, 1000) {
             override fun onTick(p0: Long) {
                 b.btnRequest.text = "Podrás consultar en ${getDate(p0)}"
             }

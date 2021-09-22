@@ -12,8 +12,8 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/btnRequest"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,20 +26,63 @@
                 android:text="¡Hola, Gonzalo Rafael!"
                 android:textColor="@color/md_grey_800"
                 android:textSize="22sp"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"/>
             <TextView
+                android:layout_marginStart="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/md_grey_800"
                 android:text="Plan de Vacacunación COVID-19" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvVaccineDates"
+            <LinearLayout
+                android:id="@+id/lyAttendedVaccineDates"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="false"
-                tools:listitem="@layout/item_vaccine_date"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:layout_marginStart="15dp"
+                    android:textStyle="bold"
+                    android:text="Mis vacunas"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvAttendedVaccineDates"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    tools:listitem="@layout/item_vaccine_date"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lyPendingVaccineDatesHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:layout_marginStart="15dp"
+                    android:textStyle="bold"
+                    android:text="Mis vacunas"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvPendingVaccineDates"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    tools:listitem="@layout/item_vaccine_date"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+            </LinearLayout>
+
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
@@ -49,7 +92,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:enabled="false"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:textAllCaps="false"
         android:text="Consultá nuevamente en 4:38"
         app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
