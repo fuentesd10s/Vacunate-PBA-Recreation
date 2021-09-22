@@ -10,6 +10,9 @@
         android:label="fragment_start"
         tools:layout="@layout/fragment_start" >
 
+        <action
+            android:id="@+id/action_startFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
@@ -17,6 +20,12 @@
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
 
+        <action
+            android:id="@+id/action_signUpFragment_to_termsAndConditionsFragment"
+            app:destination="@id/termsAndConditionsFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_citizenshipNumberFragment"
+            app:destination="@id/citizenshipNumberFragment" />
     </fragment>
     <fragment
         android:id="@+id/termsAndConditionsFragment"
@@ -29,6 +38,9 @@
         android:label="fragment_citizenship_number"
         tools:layout="@layout/fragment_citizenship_number" >
 
+        <action
+            android:id="@+id/action_citizenshipNumberFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -39,6 +51,9 @@
         <action
             android:id="@+id/action_homeFragment_to_notificationFragment"
             app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
     </fragment>
     <fragment
         android:id="@+id/myAccountFragment"

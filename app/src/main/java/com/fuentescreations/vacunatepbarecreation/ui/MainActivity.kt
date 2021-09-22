@@ -32,7 +32,8 @@ class MainActivity : AppCompatActivity() {
             when (destination.id) {
 
                 R.id.myAccountFragment,
-                R.id.homeFragment -> {
+                R.id.homeFragment,
+                R.id.notificationFragment-> {
                     hideNotificationIcon()
                     showTopBarAndNavigationDrawer()
                 }
