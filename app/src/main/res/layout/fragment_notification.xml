@@ -28,6 +28,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvNotification"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +38,7 @@
         />
 
     <LinearLayout
-        android:id="@+id/middleLayoutNotification"
+        android:id="@+id/lyNotificationDisabled"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone"
@@ -86,6 +87,7 @@
             android:text="Notificaciones"/>
 
         <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/swNotification"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
