@@ -2,6 +2,8 @@ package com.fuentescreations.vacunatepbarecreation.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
@@ -33,6 +35,9 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.myAccountFragment,
                 R.id.homeFragment,
+                R.id.myVaccinesFragment,
+                R.id.myDatesFragment,
+                R.id.trackingFragment,
                 R.id.notificationFragment-> {
                     hideNotificationIcon()
                     showTopBarAndNavigationDrawer()
@@ -44,11 +49,16 @@ class MainActivity : AppCompatActivity() {
             if (destination.id == R.id.homeFragment) showNotificationIcon()
         }
 
-        b.navView.setNavigationItemSelectedListener {
-            it.isChecked = true
-            b.drawerLayout.close()
-            true
-        }
+//        b.navView.setNavigationItemSelectedListener {
+//
+//            if (it.itemId == R.id.logOut) Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show()
+//
+//            Log.d("GONZA", "CLICK ${it.itemId.toString()}")
+//
+//            it.isChecked = true
+//            b.drawerLayout.close()
+//            true
+//        }
 
         b.topAppBar.setOnMenuItemClickListener {
             when (it.itemId) {
@@ -72,6 +82,9 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.homeFragment,
                 R.id.myAccountFragment,
+                R.id.myVaccinesFragment,
+                R.id.myDatesFragment,
+                R.id.trackingFragment
             ), b.drawerLayout
         )
 

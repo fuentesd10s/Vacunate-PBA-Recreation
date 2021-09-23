@@ -13,15 +13,15 @@
             android:icon="@drawable/ic_account"
             android:title="Mis datos" />
         <item
-            android:id="@+id/myDates"
+            android:id="@+id/myDatesFragment"
             android:icon="@drawable/ic_calendar"
             android:title="Mis turnos" />
         <item
-            android:id="@+id/myVaccines"
+            android:id="@+id/myVaccinesFragment"
             android:icon="@drawable/ic_vaccine"
             android:title="Mis vacunas" />
         <item
-            android:id="@+id/tracking"
+            android:id="@+id/trackingFragment"
             android:icon="@drawable/ic_tracking"
             android:title="Seguimientos" />
         <item

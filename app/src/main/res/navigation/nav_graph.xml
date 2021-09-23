@@ -69,4 +69,19 @@
         tools:layout="@layout/fragment_notification" >
 
     </fragment>
+    <fragment
+        android:id="@+id/myDatesFragment"
+        android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.MyDatesFragment"
+        android:label="fragment_my_dates"
+        tools:layout="@layout/fragment_my_dates" />
+    <fragment
+        android:id="@+id/myVaccinesFragment"
+        android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.MyVaccinesFragment"
+        android:label="fragment_my_vaccines"
+        tools:layout="@layout/fragment_my_vaccines" />
+    <fragment
+        android:id="@+id/trackingFragment"
+        android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.TrackingFragment"
+        android:label="fragment_tracking"
+        tools:layout="@layout/fragment_tracking" />
 </navigation>
