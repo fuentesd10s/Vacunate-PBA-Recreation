@@ -49,17 +49,6 @@ class MainActivity : AppCompatActivity() {
             if (destination.id == R.id.homeFragment) showNotificationIcon()
         }
 
-//        b.navView.setNavigationItemSelectedListener {
-//
-//            if (it.itemId == R.id.logOut) Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show()
-//
-//            Log.d("GONZA", "CLICK ${it.itemId.toString()}")
-//
-//            it.isChecked = true
-//            b.drawerLayout.close()
-//            true
-//        }
-
         b.topAppBar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.notification -> {
@@ -75,6 +64,18 @@ class MainActivity : AppCompatActivity() {
         }
 
         setupNavigationView()
+
+        b.navView.setNavigationItemSelectedListener {
+
+            logOutDialog()
+
+            b.drawerLayout.close()
+            false
+        }
+    }
+
+    private fun logOutDialog() {
+
     }
 
     private fun setupNavigationView() {
