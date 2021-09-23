@@ -33,7 +33,7 @@
         android:layout_gravity="center"
         android:text="¡Hola, te damos la bienvenida al\nPlan de Vacunación Covid-19!"
         android:textColor="@color/black"
-        android:textSize="26sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/lyMiddleSignUp"
         app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
         app:layout_constraintStart_toStartOf="@id/guidelineStart"

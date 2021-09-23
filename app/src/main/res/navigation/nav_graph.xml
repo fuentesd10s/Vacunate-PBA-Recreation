@@ -51,17 +51,12 @@
         <action
             android:id="@+id/action_homeFragment_to_notificationFragment"
             app:destination="@id/notificationFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_signUpFragment"
-            app:destination="@id/signUpFragment" />
     </fragment>
     <fragment
         android:id="@+id/myAccountFragment"
         android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.MyAccountFragment"
         android:label="fragment_my_account"
-        tools:layout="@layout/fragment_my_account" >
-
-    </fragment>
+        tools:layout="@layout/fragment_my_account" />
     <fragment
         android:id="@+id/notificationFragment"
         android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.NotificationFragment"

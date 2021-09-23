@@ -11,7 +11,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.*
 import com.fuentescreations.vacunatepbarecreation.R
 import com.fuentescreations.vacunatepbarecreation.databinding.ActivityMainBinding
-import com.fuentescreations.vacunatepbarecreation.ui.fragments.HomeFragmentDirections
+import com.fuentescreations.vacunatepbarecreation.ui.fragments.*
 import com.fuentescreations.vacunatepbarecreation.utils.hide
 import com.fuentescreations.vacunatepbarecreation.utils.show
 
@@ -65,17 +65,17 @@ class MainActivity : AppCompatActivity() {
 
         setupNavigationView()
 
-        b.navView.setNavigationItemSelectedListener {
+        setupLogOutAction()
+    }
 
-            logOutDialog()
+    private fun setupLogOutAction() {
+        b.navView.menu.getItem(b.navView.menu.size()-1).setOnMenuItemClickListener {
+
+            navController.navigate(R.id.signUpFragment)
 
             b.drawerLayout.close()
             false
         }
-    }
-
-    private fun logOutDialog() {
-
     }
 
     private fun setupNavigationView() {
