@@ -2,6 +2,7 @@ package com.fuentescreations.vacunatepbarecreation.ui.fragments
 
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import com.fuentescreations.vacunatepbarecreation.R
@@ -10,12 +11,15 @@ import com.fuentescreations.vacunatepbarecreation.databinding.FragmentHomeBindin
 import com.fuentescreations.vacunatepbarecreation.models.ModelVaccineDate
 import com.fuentescreations.vacunatepbarecreation.models.getExample
 import com.fuentescreations.vacunatepbarecreation.utils.ClassesEnum
+import com.google.android.gms.maps.model.LatLng
 import java.text.SimpleDateFormat
 import java.util.*
 
-class HomeFragment : Fragment(R.layout.fragment_home) {
+class HomeFragment : Fragment(R.layout.fragment_home),
+    AdapterItemVaccineDate.ItemVaccineClickListener {
 
     private lateinit var b: FragmentHomeBinding
+    val TAG="GONZA"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -31,7 +35,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         for (i in 1..3) {
             vaccineDateList.add(ModelVaccineDate().getExample())
         }
-        b.rvAttendedVaccineDates.adapter = AdapterItemVaccineDate(vaccineDateList, ClassesEnum.Home)
+        b.rvAttendedVaccineDates.adapter = AdapterItemVaccineDate(vaccineDateList, ClassesEnum.Home,this)
     }
 
     private fun setupBtnTimer() {
@@ -55,5 +59,17 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
 
         return SimpleDateFormat("mm:ss").format(calendar.time)
+    }
+
+    override fun onItemVaccineShortClickListener(modelVaccineDate: ModelVaccineDate) {
+        Log.d(TAG, "onItemVaccineShortClickListener: ${modelVaccineDate.toString()}")
+    }
+
+    override fun onItemVaccineLocationLister(latLng: LatLng) {
+        Log.d(TAG, "onItemVaccineLocationLister: ${latLng.toString()}")
+    }
+
+    override fun onItemVaccineCancelDate() {
+        Log.d(TAG, "onItemVaccineCancelDate: CANCEL TOUCHED")
     }
 }

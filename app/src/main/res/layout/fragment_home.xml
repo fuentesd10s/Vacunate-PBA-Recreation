@@ -108,7 +108,7 @@
                                 android:clickable="false"
                                 android:text="Pendiente"
                                 android:textSize="12sp"
-                                app:chipMinHeight="25dp"
+                                app:chipMinHeight="28dp"
                                 app:chipCornerRadius="5dp"
                                 app:chipIcon="@drawable/ic_point"
                                 app:chipIconSize="8dp"

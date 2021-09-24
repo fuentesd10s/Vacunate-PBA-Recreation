@@ -4,21 +4,46 @@ import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.fuentescreations.vacunatepbarecreation.R
 import com.fuentescreations.vacunatepbarecreation.databinding.ItemVaccineDateBinding
 import com.fuentescreations.vacunatepbarecreation.models.ModelVaccineDate
 import com.fuentescreations.vacunatepbarecreation.utils.ClassesEnum
 import com.fuentescreations.vacunatepbarecreation.utils.VaccineDateStatus
+import com.fuentescreations.vacunatepbarecreation.utils.hide
+import com.fuentescreations.vacunatepbarecreation.utils.show
+import com.google.android.gms.maps.model.LatLng
 import java.text.SimpleDateFormat
 import java.util.*
 
-class AdapterItemVaccineDate(private val vaccineDateList: List<ModelVaccineDate>, private val fromClass: ClassesEnum) :
+class AdapterItemVaccineDate(
+    private val vaccineDateList: List<ModelVaccineDate>,
+    private val fromClass: ClassesEnum,
+    private val onItemVaccineClickListener: ItemVaccineClickListener
+) :
     RecyclerView.Adapter<AdapterItemVaccineDate.ViewHolderVaccineDate>() {
+
+    interface ItemVaccineClickListener{
+        fun onItemVaccineShortClickListener(modelVaccineDate: ModelVaccineDate)
+
+        fun onItemVaccineLocationLister(latLng: LatLng)
+
+        fun onItemVaccineCancelDate()
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderVaccineDate {
         val b = ItemVaccineDateBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         val holder = ViewHolderVaccineDate(b)
+
+        b.root.setOnClickListener {
+            val position=holder.adapterPosition.takeIf { it!= DiffUtil.DiffResult.NO_POSITION }
+                ?: return@setOnClickListener
+
+            onItemVaccineClickListener.onItemVaccineShortClickListener(vaccineDateList[position])
+        }
 
         return holder
     }
@@ -54,7 +79,6 @@ class AdapterItemVaccineDate(private val vaccineDateList: List<ModelVaccineDate>
                         getColor(R.color.md_blue_900)
                     )
 
-                    b.statusAttendedOrCanceled.visibility = View.GONE
                 }
                 VaccineDateStatus.PENDING -> {
                     b.chipVaccineStatus.chipBackgroundColor = ColorStateList.valueOf(
@@ -79,28 +103,36 @@ class AdapterItemVaccineDate(private val vaccineDateList: List<ModelVaccineDate>
                         getColor(R.color.md_red_900)
                     )
 
-                    b.statusAttendedOrCanceled.visibility = View.GONE
                 }
-//                VaccineDateStatus.NOT_AVAILABLE -> {
-//                    b.chipVaccineStatus.chipBackgroundColor = ColorStateList.valueOf(
-//                        getColor(R.color.md_grey_100)
-//                    )
-//                    b.chipVaccineStatus.chipIconTint = ColorStateList.valueOf(
-//                        getColor(R.color.md_grey_700)
-//                    )
-//
-//                    b.chipVaccineStatus.setTextColor(
-//                        getColor(R.color.md_grey_700)
-//                    )
-//                    b.statusNotAvailable.visibility = View.GONE
-//                    b.tvStatusNotAvailable.visibility = View.VISIBLE
-//                }
             }
 
-            when (fromClass){
-                ClassesEnum.Home -> TODO()
-                ClassesEnum.MyDates -> TODO()
-                ClassesEnum.MyVaccines -> TODO()
+            when (fromClass) {
+                ClassesEnum.Home -> {
+                    if (modelVaccineDate.status == VaccineDateStatus.ATTENDED || modelVaccineDate.status == VaccineDateStatus.CANCELLED)
+                        b.statusAttendedOrCanceled.visibility = View.GONE
+
+                    b.tvLotNumber.hide()
+                }
+                ClassesEnum.MyDates -> {
+                    if (modelVaccineDate.status == VaccineDateStatus.ATTENDED)
+                        b.btnCancelDate.hide()
+
+                    b.tvLotNumber.hide()
+                }
+                ClassesEnum.MyVaccines -> {
+                    b.tvLotNumber.show()
+                    b.btnCancelDate.hide()
+                }
+            }
+
+            modelVaccineDate.location?.let {
+                onItemVaccineClickListener.onItemVaccineLocationLister(
+                    it
+                )
+            }
+
+            b.tvCancelDate.setOnClickListener {
+                onItemVaccineClickListener.onItemVaccineCancelDate()
             }
         }
 

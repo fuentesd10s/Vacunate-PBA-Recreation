@@ -40,13 +40,13 @@
                     android:clickable="false"
                     android:text="Pendiente"
                     android:textSize="12sp"
-                    app:chipMinHeight="25dp"
+                    app:chipMinHeight="28dp"
                     app:chipCornerRadius="5dp"
                     app:chipIcon="@drawable/ic_point"
                     app:chipIconSize="8dp"
                     app:chipIconTint="@color/black"
                     app:chipMinTouchTargetSize="0dp"
-                    app:iconStartPadding="5dp" />
+                    app:iconStartPadding="6dp" />
 
                 <TextView
                     android:id="@+id/tvVaccineDose"
@@ -72,7 +72,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:drawablePadding="5dp"
+                    android:drawablePadding="12dp"
                     android:gravity="center_vertical"
                     android:text="31/08/2021 - 16:59 hs"
                     android:textColor="@color/black"
@@ -90,7 +90,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:drawablePadding="5dp"
+                        android:drawablePadding="12dp"
                         android:ellipsize="end"
                         android:gravity="center_vertical"
                         android:maxLines="2"
@@ -104,7 +104,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:drawablePadding="5dp"
+                        android:drawablePadding="12dp"
                         android:ellipsize="end"
                         android:gravity="center_vertical"
                         android:maxLines="2"
@@ -118,7 +118,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:drawablePadding="5dp"
+                        android:drawablePadding="12dp"
                         android:ellipsize="end"
                         android:gravity="center_vertical"
                         android:maxLines="2"
@@ -127,6 +127,20 @@
                         android:textSize="12sp"
                         app:drawableStartCompat="@drawable/ic_inventory" />
 
+                    <TextView
+                        android:id="@+id/tvCancelDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:drawablePadding="12dp"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="2"
+                        android:text="Quiero cancelar mi turno"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:drawableStartCompat="@drawable/ic_calendar_cancel" />
+
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnCancelDate"
                         style="@style/Widget.MaterialComponents.Button.TextButton"
@@ -134,6 +148,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="10dp"
+                        android:visibility="gone"
                         android:insetTop="0dp"
                         android:insetBottom="0dp"
                         android:text="Quiero cancelar mi turno"
