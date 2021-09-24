@@ -1,6 +1,5 @@
 package com.fuentescreations.vacunatepbarecreation.adapters
 
-import android.content.Context
 import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.View
@@ -10,11 +9,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.fuentescreations.vacunatepbarecreation.R
 import com.fuentescreations.vacunatepbarecreation.databinding.ItemVaccineDateBinding
 import com.fuentescreations.vacunatepbarecreation.models.ModelVaccineDate
+import com.fuentescreations.vacunatepbarecreation.utils.ClassesEnum
 import com.fuentescreations.vacunatepbarecreation.utils.VaccineDateStatus
 import java.text.SimpleDateFormat
 import java.util.*
 
-class AdapterItemVaccineDate(private val vaccineDateList: List<ModelVaccineDate>) :
+class AdapterItemVaccineDate(private val vaccineDateList: List<ModelVaccineDate>, private val fromClass: ClassesEnum) :
     RecyclerView.Adapter<AdapterItemVaccineDate.ViewHolderVaccineDate>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderVaccineDate {
         val b = ItemVaccineDateBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -81,20 +81,26 @@ class AdapterItemVaccineDate(private val vaccineDateList: List<ModelVaccineDate>
 
                     b.statusAttendedOrCanceled.visibility = View.GONE
                 }
-                VaccineDateStatus.NOT_AVAILABLE -> {
-                    b.chipVaccineStatus.chipBackgroundColor = ColorStateList.valueOf(
-                        getColor(R.color.md_grey_100)
-                    )
-                    b.chipVaccineStatus.chipIconTint = ColorStateList.valueOf(
-                        getColor(R.color.md_grey_700)
-                    )
+//                VaccineDateStatus.NOT_AVAILABLE -> {
+//                    b.chipVaccineStatus.chipBackgroundColor = ColorStateList.valueOf(
+//                        getColor(R.color.md_grey_100)
+//                    )
+//                    b.chipVaccineStatus.chipIconTint = ColorStateList.valueOf(
+//                        getColor(R.color.md_grey_700)
+//                    )
+//
+//                    b.chipVaccineStatus.setTextColor(
+//                        getColor(R.color.md_grey_700)
+//                    )
+//                    b.statusNotAvailable.visibility = View.GONE
+//                    b.tvStatusNotAvailable.visibility = View.VISIBLE
+//                }
+            }
 
-                    b.chipVaccineStatus.setTextColor(
-                        getColor(R.color.md_grey_700)
-                    )
-                    b.statusNotAvailable.visibility = View.GONE
-                    b.tvStatusNotAvailable.visibility = View.VISIBLE
-                }
+            when (fromClass){
+                ClassesEnum.Home -> TODO()
+                ClassesEnum.MyDates -> TODO()
+                ClassesEnum.MyVaccines -> TODO()
             }
         }
 

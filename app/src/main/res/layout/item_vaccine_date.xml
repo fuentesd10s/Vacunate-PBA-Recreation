@@ -40,10 +40,10 @@
                     android:clickable="false"
                     android:text="Pendiente"
                     android:textSize="12sp"
-                    app:chipMinHeight="30dp"
+                    app:chipMinHeight="25dp"
                     app:chipCornerRadius="5dp"
                     app:chipIcon="@drawable/ic_point"
-                    app:chipIconSize="10dp"
+                    app:chipIconSize="8dp"
                     app:chipIconTint="@color/black"
                     app:chipMinTouchTargetSize="0dp"
                     app:iconStartPadding="5dp" />
@@ -74,7 +74,7 @@
                     android:layout_marginTop="10dp"
                     android:drawablePadding="5dp"
                     android:gravity="center_vertical"
-                    android:text="31/082021 - 16:59 hs"
+                    android:text="31/08/2021 - 16:59 hs"
                     android:textColor="@color/black"
                     android:textSize="12sp"
                     app:drawableStartCompat="@drawable/ic_calendar" />
@@ -112,6 +112,20 @@
                         android:textColor="@color/black"
                         android:textSize="12sp"
                         app:drawableStartCompat="@drawable/ic_location" />
+
+                    <TextView
+                        android:id="@+id/tvLotNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:drawablePadding="5dp"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="2"
+                        android:text="Número de lote: 202127B1259"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:drawableStartCompat="@drawable/ic_inventory" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnCancelDate"

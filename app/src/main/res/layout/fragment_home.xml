@@ -55,7 +55,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:nestedScrollingEnabled="false"
-                    tools:listitem="@layout/item_vaccine_date"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
             </LinearLayout>
 
@@ -64,23 +63,72 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
-                    android:layout_marginStart="15dp"
                     android:textStyle="bold"
-                    android:text="Mis vacunas"/>
+                    android:text="Mi turno pendiente"/>
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvPendingVaccineDates"
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:nestedScrollingEnabled="false"
-                    tools:listitem="@layout/item_vaccine_date"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardElevation="0dp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeColor="@color/md_grey_500"
+                    app:strokeWidth="0.5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipVaccineStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:clickable="false"
+                                android:text="Pendiente"
+                                android:textSize="12sp"
+                                app:chipMinHeight="25dp"
+                                app:chipCornerRadius="5dp"
+                                app:chipIcon="@drawable/ic_point"
+                                app:chipIconSize="8dp"
+                                app:chipIconTint="@color/black"
+                                app:chipMinTouchTargetSize="0dp"
+                                app:iconStartPadding="5dp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvStatusNotAvailable"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Te damos la bienvenida al plan de Vacunación COVID-19.\n\nUna vez que las dosis esten disponibles y el cronograma de vacunación esté confirmado, recibirás una notificación.\n\n¡Muchas Gracias!"/>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
             </LinearLayout>
 
         </LinearLayout>

@@ -14,8 +14,8 @@ data class ModelVaccineDate(
 )
 
 fun ModelVaccineDate.getExample(): ModelVaccineDate {
-    this.status = listOf(VaccineDateStatus.ATTENDED,VaccineDateStatus.CANCELLED,VaccineDateStatus.PENDING,VaccineDateStatus.NOT_AVAILABLE).random()
-    this.dosesNumber = listOf(DosesNumber.FIRST,DosesNumber.SECOND,DosesNumber.SECOND,DosesNumber.THIRD,DosesNumber.FOURTH,DosesNumber.NOT_AVAILABLE).random()
+    this.status = listOf(VaccineDateStatus.ATTENDED,VaccineDateStatus.CANCELLED,VaccineDateStatus.PENDING).random()
+    this.dosesNumber = listOf(DosesNumber.FIRST,DosesNumber.SECOND,DosesNumber.SECOND,DosesNumber.THIRD).random()
     this.date = System.currentTimeMillis()
     this.hospitalName = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     this.address = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."

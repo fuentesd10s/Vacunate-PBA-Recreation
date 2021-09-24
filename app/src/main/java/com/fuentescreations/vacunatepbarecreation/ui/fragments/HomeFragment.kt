@@ -9,6 +9,7 @@ import com.fuentescreations.vacunatepbarecreation.adapters.AdapterItemVaccineDat
 import com.fuentescreations.vacunatepbarecreation.databinding.FragmentHomeBinding
 import com.fuentescreations.vacunatepbarecreation.models.ModelVaccineDate
 import com.fuentescreations.vacunatepbarecreation.models.getExample
+import com.fuentescreations.vacunatepbarecreation.utils.ClassesEnum
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -27,11 +28,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private fun setupRv() {
         val vaccineDateList = mutableListOf<ModelVaccineDate>()
-        for (i in 1..5) {
+        for (i in 1..3) {
             vaccineDateList.add(ModelVaccineDate().getExample())
         }
-        b.rvAttendedVaccineDates.adapter = AdapterItemVaccineDate(vaccineDateList)
-        b.rvPendingVaccineDates.adapter = AdapterItemVaccineDate(vaccineDateList)
+        b.rvAttendedVaccineDates.adapter = AdapterItemVaccineDate(vaccineDateList, ClassesEnum.Home)
     }
 
     private fun setupBtnTimer() {

@@ -11,6 +11,11 @@ enum class DosesNumber(val value: String) {
     FIRST("Primera dosis"),
     SECOND("Segunda dosis"),
     THIRD("Tercera dosis"),
-    FOURTH("Cuarta dosis"),
     NOT_AVAILABLE("")
+}
+
+enum class ClassesEnum(){
+    Home,
+    MyDates,
+    MyVaccines
 }
