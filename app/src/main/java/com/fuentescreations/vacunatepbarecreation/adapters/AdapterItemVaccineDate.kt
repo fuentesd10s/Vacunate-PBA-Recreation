@@ -4,9 +4,7 @@ import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.fuentescreations.vacunatepbarecreation.R
 import com.fuentescreations.vacunatepbarecreation.databinding.ItemVaccineDateBinding
@@ -26,7 +24,7 @@ class AdapterItemVaccineDate(
 ) :
     RecyclerView.Adapter<AdapterItemVaccineDate.ViewHolderVaccineDate>() {
 
-    interface ItemVaccineClickListener{
+    interface ItemVaccineClickListener {
         fun onItemVaccineShortClickListener(modelVaccineDate: ModelVaccineDate)
 
         fun onItemVaccineLocationLister(latLng: LatLng)
@@ -34,19 +32,15 @@ class AdapterItemVaccineDate(
         fun onItemVaccineCancelDate()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderVaccineDate {
-        val b = ItemVaccineDateBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        val holder = ViewHolderVaccineDate(b)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderVaccineDate =
+        ViewHolderVaccineDate(
+            ItemVaccineDateBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
 
-        b.root.setOnClickListener {
-            val position=holder.adapterPosition.takeIf { it!= DiffUtil.DiffResult.NO_POSITION }
-                ?: return@setOnClickListener
-
-            onItemVaccineClickListener.onItemVaccineShortClickListener(vaccineDateList[position])
-        }
-
-        return holder
-    }
 
     override fun onBindViewHolder(holder: ViewHolderVaccineDate, position: Int) {
         holder.bind(vaccineDateList[position])
@@ -63,7 +57,7 @@ class AdapterItemVaccineDate(
             b.chipVaccineStatus.text = modelVaccineDate.status.value
             b.tvVaccineDose.text = modelVaccineDate.dosesNumber.value
             b.tvHospitalName.text = modelVaccineDate.hospitalName
-            b.tvLocation.text = modelVaccineDate.address
+            b.tvAddress.text = modelVaccineDate.address
             b.tvDate.text = modelVaccineDate.date?.let { getDateFromMillis(it) }
 
             when (modelVaccineDate.status) {
@@ -125,16 +119,23 @@ class AdapterItemVaccineDate(
                 }
             }
 
-            modelVaccineDate.location?.let {
-                onItemVaccineClickListener.onItemVaccineLocationLister(
-                    it
-                )
+            modelVaccineDate.location?.let { latLng ->
+                b.tvAddress.setOnClickListener {
+                    onItemVaccineClickListener.onItemVaccineLocationLister(
+                        latLng
+                    )
+                }
             }
 
             b.tvCancelDate.setOnClickListener {
                 onItemVaccineClickListener.onItemVaccineCancelDate()
             }
+
+            b.cvItemVaccine.setOnClickListener {
+                onItemVaccineClickListener.onItemVaccineShortClickListener(modelVaccineDate)
+            }
         }
+
 
         private fun getColor(color: Int): Int = ContextCompat.getColor(mContext, color)
 
