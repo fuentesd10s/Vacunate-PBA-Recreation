@@ -45,7 +45,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.HomeFragment"
-        android:label="fragment_home"
+        android:label="Inicio"
         tools:layout="@layout/fragment_home" >
 
         <action
@@ -55,28 +55,28 @@
     <fragment
         android:id="@+id/myAccountFragment"
         android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.MyAccountFragment"
-        android:label="fragment_my_account"
+        android:label="Mis datos"
         tools:layout="@layout/fragment_my_account" />
     <fragment
         android:id="@+id/notificationFragment"
         android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.NotificationFragment"
-        android:label="fragment_notification"
+        android:label="Notificaciones"
         tools:layout="@layout/fragment_notification" >
 
     </fragment>
     <fragment
         android:id="@+id/myDatesFragment"
         android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.MyDatesFragment"
-        android:label="fragment_my_dates"
+        android:label="Mis turnos"
         tools:layout="@layout/fragment_my_dates" />
     <fragment
         android:id="@+id/myVaccinesFragment"
         android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.MyVaccinesFragment"
-        android:label="fragment_my_vaccines"
+        android:label="Mis vacunas"
         tools:layout="@layout/fragment_my_vaccines" />
     <fragment
         android:id="@+id/trackingFragment"
         android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.TrackingFragment"
-        android:label="fragment_tracking"
+        android:label="Seguimientos"
         tools:layout="@layout/fragment_tracking" />
 </navigation>

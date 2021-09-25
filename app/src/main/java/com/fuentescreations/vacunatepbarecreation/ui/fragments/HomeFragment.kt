@@ -46,7 +46,7 @@ class HomeFragment : Fragment(R.layout.fragment_home),
 
             override fun onFinish() {
                 b.btnRequest.isEnabled = true
-                b.btnRequest.text = "Consultar"
+                b.btnRequest.text = "Consultá nuevamente"
             }
 
         }
