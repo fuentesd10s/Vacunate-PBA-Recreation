@@ -29,7 +29,7 @@ class AdapterItemVaccineDate(
 
         fun onItemVaccineLocationLister(latLng: LatLng)
 
-        fun onItemVaccineCancelDate()
+        fun onItemVaccineCancelDate(modelVaccineDate: ModelVaccineDate)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderVaccineDate =
@@ -128,7 +128,7 @@ class AdapterItemVaccineDate(
             }
 
             b.tvCancelDate.setOnClickListener {
-                onItemVaccineClickListener.onItemVaccineCancelDate()
+                onItemVaccineClickListener.onItemVaccineCancelDate(modelVaccineDate)
             }
 
             b.cvItemVaccine.setOnClickListener {

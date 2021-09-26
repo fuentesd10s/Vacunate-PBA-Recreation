@@ -1,5 +1,6 @@
 package com.fuentescreations.vacunatepbarecreation.ui.fragments
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
@@ -11,14 +12,19 @@ import com.fuentescreations.vacunatepbarecreation.databinding.FragmentHomeBindin
 import com.fuentescreations.vacunatepbarecreation.models.ModelVaccineDate
 import com.fuentescreations.vacunatepbarecreation.models.getExample
 import com.fuentescreations.vacunatepbarecreation.utils.ClassesEnum
+import com.fuentescreations.vacunatepbarecreation.utils.VaccineDateStatus
 import com.google.android.gms.maps.model.LatLng
 import java.text.SimpleDateFormat
 import java.util.*
+import android.content.Intent
+import android.net.Uri
+
 
 class HomeFragment : Fragment(R.layout.fragment_home),
     AdapterItemVaccineDate.ItemVaccineClickListener {
 
     private lateinit var b: FragmentHomeBinding
+    private lateinit var mAdapter : AdapterItemVaccineDate
     val TAG="GONZA"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -35,7 +41,8 @@ class HomeFragment : Fragment(R.layout.fragment_home),
         for (i in 1..3) {
             vaccineDateList.add(ModelVaccineDate().getExample())
         }
-        b.rvAttendedVaccineDates.adapter = AdapterItemVaccineDate(vaccineDateList, ClassesEnum.Home,this)
+        mAdapter = AdapterItemVaccineDate(vaccineDateList, ClassesEnum.Home,this)
+        b.rvAttendedVaccineDates.adapter = mAdapter
     }
 
     private fun setupBtnTimer() {
@@ -66,10 +73,25 @@ class HomeFragment : Fragment(R.layout.fragment_home),
     }
 
     override fun onItemVaccineLocationLister(latLng: LatLng) {
-        Log.d(TAG, "onItemVaccineLocationLister: ${latLng.toString()}")
+        val mapUri = Uri.parse("geo:0,0?q=${latLng.latitude},${latLng.longitude}(Vacunatorio)")
+        val mapIntent = Intent(Intent.ACTION_VIEW, mapUri)
+        mapIntent.setPackage("com.google.android.apps.maps")
+
+        requireActivity().startActivity(mapIntent)
     }
 
-    override fun onItemVaccineCancelDate() {
-        Log.d(TAG, "onItemVaccineCancelDate: CANCEL TOUCHED")
+    override fun onItemVaccineCancelDate(modelVaccineDate: ModelVaccineDate) {
+        AlertDialog.Builder(requireContext())
+            .setTitle("¿Estas seguro que quieres cancelar tu turno?")
+            .setPositiveButton("Confirmar"){d,_ ->
+                modelVaccineDate.status = VaccineDateStatus.CANCELLED
+                mAdapter.notifyDataSetChanged()
+
+                d.dismiss()
+            }
+            .setNegativeButton("Volver"){d,_ ->
+                d.dismiss()
+            }
+            .show()
     }
 }
