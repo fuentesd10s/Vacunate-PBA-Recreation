@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="default_background">#00AEC3</color>
+    <color name="default_secondary_background">#00838f</color>
     <color name="default_accent_color">#ed277f</color>
 
     <!--reds-->

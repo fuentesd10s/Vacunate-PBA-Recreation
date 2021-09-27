@@ -18,14 +18,18 @@ import java.text.SimpleDateFormat
 import java.util.*
 import android.content.Intent
 import android.net.Uri
+import androidx.navigation.Navigator
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import com.google.android.material.navigation.NavigationView
 
 
 class HomeFragment : Fragment(R.layout.fragment_home),
     AdapterItemVaccineDate.ItemVaccineClickListener {
 
     private lateinit var b: FragmentHomeBinding
-    private lateinit var mAdapter : AdapterItemVaccineDate
-    val TAG="GONZA"
+    private lateinit var mAdapter: AdapterItemVaccineDate
+    val TAG = "GONZA"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -41,7 +45,7 @@ class HomeFragment : Fragment(R.layout.fragment_home),
         for (i in 1..3) {
             vaccineDateList.add(ModelVaccineDate().getExample())
         }
-        mAdapter = AdapterItemVaccineDate(vaccineDateList, ClassesEnum.Home,this)
+        mAdapter = AdapterItemVaccineDate(vaccineDateList, ClassesEnum.Home, this)
         b.rvAttendedVaccineDates.adapter = mAdapter
     }
 
@@ -68,28 +72,39 @@ class HomeFragment : Fragment(R.layout.fragment_home),
         return SimpleDateFormat("mm:ss").format(calendar.time)
     }
 
-    override fun onItemVaccineShortClickListener(modelVaccineDate: ModelVaccineDate) {
-        Log.d(TAG, "onItemVaccineShortClickListener: ${modelVaccineDate.toString()}")
+    override fun onItemVaccineShortClickListener() {
     }
 
     override fun onItemVaccineLocationLister(latLng: LatLng) {
-        val mapUri = Uri.parse("geo:0,0?q=${latLng.latitude},${latLng.longitude}(Vacunatorio)")
-        val mapIntent = Intent(Intent.ACTION_VIEW, mapUri)
-        mapIntent.setPackage("com.google.android.apps.maps")
+        AlertDialog.Builder(requireContext())
+            .setTitle("¿Deseas abrir Google Maps con la ubicación del centro vacunatorio?")
+            .setPositiveButton("Abrir") { d, _ ->
+                val mapUri =
+                    Uri.parse("geo:0,0?q=${latLng.latitude},${latLng.longitude}(Vacunatorio)")
+                val mapIntent = Intent(Intent.ACTION_VIEW, mapUri)
+                mapIntent.setPackage("com.google.android.apps.maps")
 
-        requireActivity().startActivity(mapIntent)
+                requireActivity().startActivity(mapIntent)
+                d.dismiss()
+            }
+            .setNegativeButton("Cancelar") { d, _ ->
+                d.dismiss()
+            }
+            .show()
+
+
     }
 
     override fun onItemVaccineCancelDate(modelVaccineDate: ModelVaccineDate) {
         AlertDialog.Builder(requireContext())
             .setTitle("¿Estas seguro que quieres cancelar tu turno?")
-            .setPositiveButton("Confirmar"){d,_ ->
+            .setPositiveButton("Confirmar") { d, _ ->
                 modelVaccineDate.status = VaccineDateStatus.CANCELLED
                 mAdapter.notifyDataSetChanged()
 
                 d.dismiss()
             }
-            .setNegativeButton("Volver"){d,_ ->
+            .setNegativeButton("Volver") { d, _ ->
                 d.dismiss()
             }
             .show()

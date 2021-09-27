@@ -3,6 +3,7 @@ package com.fuentescreations.vacunatepbarecreation.models
 import com.fuentescreations.vacunatepbarecreation.utils.DosesNumber
 import com.fuentescreations.vacunatepbarecreation.utils.VaccineDateStatus
 import com.google.android.gms.maps.model.LatLng
+import java.io.Serializable
 
 data class ModelVaccineDate(
     var status : VaccineDateStatus = VaccineDateStatus.NOT_AVAILABLE,
@@ -11,7 +12,7 @@ data class ModelVaccineDate(
     var hospitalName : String = "",
     var address : String ="",
     var location : LatLng?=null
-)
+) : Serializable
 
 fun ModelVaccineDate.getExample(): ModelVaccineDate {
     this.status = listOf(VaccineDateStatus.ATTENDED,VaccineDateStatus.CANCELLED,VaccineDateStatus.PENDING).random()

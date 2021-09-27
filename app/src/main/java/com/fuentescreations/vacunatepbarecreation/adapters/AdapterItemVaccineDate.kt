@@ -25,7 +25,7 @@ class AdapterItemVaccineDate(
     RecyclerView.Adapter<AdapterItemVaccineDate.ViewHolderVaccineDate>() {
 
     interface ItemVaccineClickListener {
-        fun onItemVaccineShortClickListener(modelVaccineDate: ModelVaccineDate)
+        fun onItemVaccineShortClickListener()
 
         fun onItemVaccineLocationLister(latLng: LatLng)
 
@@ -132,7 +132,7 @@ class AdapterItemVaccineDate(
             }
 
             b.cvItemVaccine.setOnClickListener {
-                onItemVaccineClickListener.onItemVaccineShortClickListener(modelVaccineDate)
+                onItemVaccineClickListener.onItemVaccineShortClickListener()
             }
         }
 
