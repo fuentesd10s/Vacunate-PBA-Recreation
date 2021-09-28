@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.myVaccinesFragment,
                 R.id.myDatesFragment,
                 R.id.trackingFragment,
+                R.id.vaccinationCertificateFragment,
                 R.id.notificationFragment-> {
                     hideNotificationIcon()
                     showTopBarAndNavigationDrawer()

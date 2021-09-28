@@ -21,6 +21,10 @@
             android:icon="@drawable/ic_vaccine"
             android:title="Mis vacunas" />
         <item
+            android:id="@+id/vaccinationCertificateFragment"
+            android:icon="@drawable/ic_verified"
+            android:title="Certificado de vacunación" />
+        <item
             android:id="@+id/trackingFragment"
             android:icon="@drawable/ic_tracking"
             android:title="Seguimientos" />

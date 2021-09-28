@@ -42,9 +42,9 @@ class HomeFragment : Fragment(R.layout.fragment_home),
 
     private fun setupRv() {
         val vaccineDateList = mutableListOf<ModelVaccineDate>()
-        for (i in 1..3) {
-            vaccineDateList.add(ModelVaccineDate().getExample())
-        }
+
+        for (i in 1..3) vaccineDateList.add(ModelVaccineDate().getExample())
+
         mAdapter = AdapterItemVaccineDate(vaccineDateList, ClassesEnum.Home, this)
         b.rvAttendedVaccineDates.adapter = mAdapter
     }
@@ -57,7 +57,7 @@ class HomeFragment : Fragment(R.layout.fragment_home),
 
             override fun onFinish() {
                 b.btnRequest.isEnabled = true
-                b.btnRequest.text = "Consultá nuevamente"
+                b.btnRequest.text = "Consultar nuevamente"
             }
 
         }

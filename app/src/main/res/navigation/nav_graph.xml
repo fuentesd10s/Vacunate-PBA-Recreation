@@ -79,4 +79,9 @@
         android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.TrackingFragment"
         android:label="Seguimientos"
         tools:layout="@layout/fragment_tracking" />
+    <fragment
+        android:id="@+id/vaccinationCertificateFragment"
+        android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.VaccinationCertificateFragment"
+        android:label="Certificado de vacunación"
+        tools:layout="@layout/fragment_vaccination_certificate" />
 </navigation>
