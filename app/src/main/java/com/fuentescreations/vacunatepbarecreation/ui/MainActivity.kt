@@ -86,6 +86,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.myAccountFragment,
                 R.id.myVaccinesFragment,
                 R.id.myDatesFragment,
+                R.id.vaccinationCertificateFragment,
                 R.id.trackingFragment
             ), b.drawerLayout
         )

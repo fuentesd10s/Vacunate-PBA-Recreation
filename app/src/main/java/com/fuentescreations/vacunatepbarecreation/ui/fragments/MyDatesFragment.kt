@@ -36,14 +36,11 @@ class MyDatesFragment : Fragment(R.layout.fragment_my_dates),
     }
 
     override fun onItemVaccineShortClickListener() {
-        TODO("Not yet implemented")
     }
 
     override fun onItemVaccineLocationLister(latLng: LatLng) {
-        TODO("Not yet implemented")
     }
 
     override fun onItemVaccineCancelDate(modelVaccineDate: ModelVaccineDate) {
-        TODO("Not yet implemented")
     }
 }
