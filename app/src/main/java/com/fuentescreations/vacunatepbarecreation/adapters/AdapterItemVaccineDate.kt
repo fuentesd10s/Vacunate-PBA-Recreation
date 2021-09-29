@@ -108,14 +108,16 @@ class AdapterItemVaccineDate(
                     b.tvLotNumber.hide()
                 }
                 ClassesEnum.MyDates -> {
-                    if (modelVaccineDate.status == VaccineDateStatus.ATTENDED)
-                        b.btnCancelDate.hide()
+                    //Aca solo van a ir PENDIENTES asi que siempre se debe mostrar para cancelar!
 
+                    b.tvCancelDate.show()
                     b.tvLotNumber.hide()
                 }
                 ClassesEnum.MyVaccines -> {
+                    //Aca solo se van a mostrar las ATENDIDAS asi que el boton para cancelar desaparece y aparece el numero de lote siempre!
+
                     b.tvLotNumber.show()
-                    b.btnCancelDate.hide()
+                    b.tvCancelDate.hide()
                 }
             }
 

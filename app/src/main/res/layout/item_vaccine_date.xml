@@ -143,21 +143,6 @@
                         android:textColor="@color/black"
                         android:textSize="12sp"
                         app:drawableStartCompat="@drawable/ic_calendar_cancel" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnCancelDate"
-                        style="@style/Widget.MaterialComponents.Button.TextButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="10dp"
-                        android:visibility="gone"
-                        android:insetTop="0dp"
-                        android:insetBottom="0dp"
-                        android:text="Quiero cancelar mi turno"
-                        android:textAllCaps="false"
-                        android:textSize="12sp"
-                        app:icon="@drawable/ic_calendar_cancel" />
                 </LinearLayout>
             </LinearLayout>
 

@@ -20,7 +20,8 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/ic_account_circle"/>
+            android:src="@drawable/ic_account_circle"
+            app:tint="@color/default_background" />
 
         <TextView
             android:layout_width="wrap_content"

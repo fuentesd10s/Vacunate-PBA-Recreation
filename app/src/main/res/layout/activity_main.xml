@@ -54,8 +54,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            app:itemTextColor="@drawable/navigation_item_color"
-            app:itemIconTint="@drawable/navigation_item_color"
+            app:itemTextColor="@drawable/style_items_menu_nav_view"
+            app:itemIconTint="@drawable/style_items_menu_nav_view"
             app:headerLayout="@layout/header_navigation_drawer"
             app:menu="@menu/navigation_drawer" />
 
