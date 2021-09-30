@@ -22,6 +22,7 @@ import androidx.navigation.Navigator
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.onNavDestinationSelected
 import com.google.android.material.navigation.NavigationView
 
 
@@ -74,6 +75,9 @@ class HomeFragment : Fragment(R.layout.fragment_home),
     }
 
     override fun onItemVaccineShortClickListener() {
+        val navView = activity?.findViewById<NavigationView>(R.id.navView)
+
+        navView?.menu?.getItem(3)?.onNavDestinationSelected(findNavController())
     }
 
     override fun onItemVaccineLocationLister(latLng: LatLng) {

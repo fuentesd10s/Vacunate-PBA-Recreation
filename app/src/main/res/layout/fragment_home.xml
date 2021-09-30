@@ -23,11 +23,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="¡Hola, Gonzalo Rafael!"
+                android:text="@string/home_fragment_name"
                 android:textColor="@color/md_grey_800"
                 android:textSize="22sp"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="15dp"/>
             <TextView
                 android:layout_marginStart="15dp"
                 android:layout_width="match_parent"
@@ -48,6 +48,7 @@
                     android:textSize="16sp"
                     android:layout_marginStart="15dp"
                     android:textStyle="bold"
+                    android:textColor="@color/default_secondary_background"
                     android:text="Mis vacunas"/>
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -73,6 +74,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
                     android:textStyle="bold"
+                    android:textColor="@color/default_secondary_background"
                     android:text="Mi turno pendiente"/>
 
                 <com.google.android.material.card.MaterialCardView
