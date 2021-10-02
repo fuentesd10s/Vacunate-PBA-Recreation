@@ -10,6 +10,7 @@
         android:id="@+id/lyTopNotification"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/default_secondary_background"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,12 +20,15 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="@color/white"
             android:layout_marginStart="20dp"
             android:text="0 Nuevos"/>
 
         <CheckBox
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:theme="@style/MyCheckBox"/>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -41,7 +45,6 @@
         android:id="@+id/lyNotificationDisabled"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/lyTopNotification"
@@ -52,6 +55,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:tint="@color/default_secondary_background"
             android:src="@drawable/ic_notification"/>
 
         <TextView
@@ -59,6 +63,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="20sp"
+            android:textColor="@color/default_secondary_background"
             android:text="Notificaciones"/>
         <TextView
             android:layout_width="wrap_content"
@@ -74,6 +79,7 @@
         android:id="@+id/lyBottomNotification"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/md_grey_200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
