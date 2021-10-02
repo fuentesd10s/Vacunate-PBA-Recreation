@@ -9,7 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.fuentescreations.vacunatepbarecreation.R
 import com.fuentescreations.vacunatepbarecreation.databinding.ItemVaccineDateBinding
 import com.fuentescreations.vacunatepbarecreation.models.ModelVaccineDate
-import com.fuentescreations.vacunatepbarecreation.utils.ClassesEnum
+import com.fuentescreations.vacunatepbarecreation.ui.fragments.HomeFragment
+import com.fuentescreations.vacunatepbarecreation.ui.fragments.MyDatesFragment
+import com.fuentescreations.vacunatepbarecreation.ui.fragments.MyVaccinesFragment
 import com.fuentescreations.vacunatepbarecreation.utils.VaccineDateStatus
 import com.fuentescreations.vacunatepbarecreation.utils.hide
 import com.fuentescreations.vacunatepbarecreation.utils.show
@@ -19,7 +21,7 @@ import java.util.*
 
 class AdapterItemVaccineDate(
     private val vaccineDateList: List<ModelVaccineDate>,
-    private val fromClass: ClassesEnum,
+    private val fragmentId: Int,
     private val onItemVaccineClickListener: ItemVaccineClickListener
 ) :
     RecyclerView.Adapter<AdapterItemVaccineDate.ViewHolderVaccineDate>() {
@@ -100,20 +102,20 @@ class AdapterItemVaccineDate(
                 }
             }
 
-            when (fromClass) {
-                ClassesEnum.Home -> {
+            when (fragmentId) {
+                HomeFragment().id -> {
                     if (modelVaccineDate.status == VaccineDateStatus.ATTENDED || modelVaccineDate.status == VaccineDateStatus.CANCELLED)
                         b.statusAttendedOrCanceled.visibility = View.GONE
 
                     b.tvLotNumber.hide()
                 }
-                ClassesEnum.MyDates -> {
+                MyDatesFragment().id -> {
                     //Aca solo van a ir PENDIENTES asi que siempre se debe mostrar para cancelar!
 
                     b.tvCancelDate.show()
                     b.tvLotNumber.hide()
                 }
-                ClassesEnum.MyVaccines -> {
+                MyVaccinesFragment().id -> {
                     //Aca solo se van a mostrar las ATENDIDAS asi que el boton para cancelar desaparece y aparece el numero de lote siempre!
 
                     b.tvLotNumber.show()
