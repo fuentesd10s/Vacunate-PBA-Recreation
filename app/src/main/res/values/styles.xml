@@ -4,9 +4,4 @@
     <style name="style_items_menu_nav_view_font">
         <item name="fontFamily">@font/default_font</item>
     </style>
-
-    <style name="MyCheckBox" parent="Theme.AppCompat.NoActionBar">
-        <item name="colorControlNormal">@color/white</item>   <!-- normal border color change as you wish -->
-        <item name="colorControlActivated">@color/default_accent_color</item> <!-- activated color change as you wish -->
-    </style>
 </resources>

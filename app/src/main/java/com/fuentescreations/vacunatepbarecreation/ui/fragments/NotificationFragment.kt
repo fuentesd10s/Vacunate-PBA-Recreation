@@ -27,15 +27,23 @@ class NotificationFragment : Fragment(R.layout.fragment_notification) {
         if (b.swNotification.isChecked){
             b.rvNotification.show()
             b.lyNotificationDisabled.hide()
+            b.lyTopNotification.show()
         }else{
             b.rvNotification.hide()
             b.lyNotificationDisabled.show()
+            b.lyTopNotification.hide()
         }
 
         b.swNotification.setOnCheckedChangeListener { _, isChecked ->
 
-            if (isChecked) b.lyNotificationDisabled.hide()
-            else b.lyNotificationDisabled.show()
+            if (isChecked) {
+                b.lyNotificationDisabled.hide()
+                b.lyTopNotification.show()
+            }
+            else {
+                b.lyTopNotification.hide()
+                b.lyNotificationDisabled.show()
+            }
         }
     }
 }

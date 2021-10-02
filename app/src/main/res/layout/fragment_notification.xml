@@ -24,11 +24,15 @@
             android:layout_marginStart="20dp"
             android:text="0 Nuevos"/>
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/ic_delete"/>
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:theme="@style/MyCheckBox"/>
+            android:buttonTint="@color/white"/>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -55,8 +59,8 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:tint="@color/default_secondary_background"
-            android:src="@drawable/ic_notification"/>
+            android:src="@drawable/ic_notification"
+            app:tint="@color/default_secondary_background" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -89,6 +93,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="@color/black"
             android:layout_marginStart="20dp"
             android:text="Notificaciones"/>
 
