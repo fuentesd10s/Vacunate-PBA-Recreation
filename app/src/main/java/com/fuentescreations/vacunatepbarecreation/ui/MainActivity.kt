@@ -39,7 +39,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.myDatesFragment,
                 R.id.trackingFragment,
                 R.id.vaccinationCertificateFragment,
-                R.id.notificationFragment-> {
+                R.id.personalDataFragment,
+                R.id.notificationFragment -> {
                     hideNotificationIcon()
                     showTopBarAndNavigationDrawer()
                 }
@@ -70,7 +71,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupLogOutAction() {
-        b.navView.menu.getItem(b.navView.menu.size()-1).setOnMenuItemClickListener {
+        b.navView.menu.getItem(b.navView.menu.size() - 1).setOnMenuItemClickListener {
 
             navController.navigate(R.id.signUpFragment)
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.MyAccountFragment">
+    tools:context=".ui.fragments.MyDataFragment">
 
     <LinearLayout
         android:id="@+id/lyTopMyAccount"
@@ -48,15 +48,15 @@
         android:orientation="vertical">
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnGoToPersonalData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            app:cardElevation="0dp"
             android:clickable="true"
             android:focusable="true"
+            app:cardElevation="0dp"
             app:strokeColor="@color/md_grey_500"
-            app:strokeWidth="0.5dp"
-            >
+            app:strokeWidth="0.5dp">
 
             <LinearLayout
                 android:layout_width="match_parent"

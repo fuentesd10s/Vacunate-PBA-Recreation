@@ -54,9 +54,13 @@
     </fragment>
     <fragment
         android:id="@+id/myAccountFragment"
-        android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.MyAccountFragment"
+        android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.MyDataFragment"
         android:label="Mis datos"
-        tools:layout="@layout/fragment_my_account" />
+        tools:layout="@layout/fragment_my_data" >
+        <action
+            android:id="@+id/action_myAccountFragment_to_personalDataFragment"
+            app:destination="@id/personalDataFragment" />
+    </fragment>
     <fragment
         android:id="@+id/notificationFragment"
         android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.NotificationFragment"
@@ -84,4 +88,9 @@
         android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.VaccinationCertificateFragment"
         android:label="Certificado de vacunación"
         tools:layout="@layout/fragment_vaccination_certificate" />
+    <fragment
+        android:id="@+id/personalDataFragment"
+        android:name="com.fuentescreations.vacunatepbarecreation.ui.fragments.PersonalDataFragment"
+        android:label="Datos personales"
+        tools:layout="@layout/fragment_personal_data" />
 </navigation>

@@ -21,14 +21,22 @@ class NotificationFragment : Fragment(R.layout.fragment_notification) {
         b = FragmentNotificationBinding.bind(view)
 
         setupSwitchNotification()
+
+        setupMainCheckBox()
+    }
+
+    private fun setupMainCheckBox() {
+        b.cbSelectAllMessages.setOnCheckedChangeListener { _, boolean ->
+            b.cbMessage.isChecked = boolean
+        }
     }
 
     private fun setupSwitchNotification() {
-        if (b.swNotification.isChecked){
+        if (b.swNotification.isChecked) {
             b.rvNotification.show()
             b.lyNotificationDisabled.hide()
             b.lyTopNotification.show()
-        }else{
+        } else {
             b.rvNotification.hide()
             b.lyNotificationDisabled.show()
             b.lyTopNotification.hide()
@@ -39,8 +47,7 @@ class NotificationFragment : Fragment(R.layout.fragment_notification) {
             if (isChecked) {
                 b.lyNotificationDisabled.hide()
                 b.lyTopNotification.show()
-            }
-            else {
+            } else {
                 b.lyTopNotification.hide()
                 b.lyNotificationDisabled.show()
             }

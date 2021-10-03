@@ -1,60 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.NotificationFragment">
 
     <LinearLayout
         android:id="@+id/lyTopNotification"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/default_secondary_background"
-        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:orientation="horizontal">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="@color/white"
-            android:layout_marginStart="20dp"
-            android:text="0 Nuevos"/>
+            android:background="@color/default_secondary_background"
+            android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="15dp"
-            android:src="@drawable/ic_delete"/>
-        <CheckBox
-            android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:text="0 Nuevos"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/ic_delete" />
+
+            <CheckBox
+                android:id="@+id/cbSelectAllMessages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:buttonTint="@color/white"/>
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:backgroundTint="@color/md_cyan_50">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_email"
+                    android:padding="5dp"
+                    app:tint="@color/default_secondary_background" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:ellipsize="end"
+                    android:text="Ud. tiene turno reservado para la fecha/hora indicada"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:text="Ingresa a la app VACUNATEPBA para ver más información."/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2021-12-24 09:30 hs"/>
+
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/cbMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvNotification"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/lyBottomNotification"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lyTopNotification"
-        app:layout_constraintBottom_toTopOf="@id/lyBottomNotification"
-        />
+        app:layout_constraintTop_toBottomOf="@id/lyTopNotification" />
 
     <LinearLayout
         android:id="@+id/lyNotificationDisabled"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/lyBottomNotification"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lyTopNotification"
-        app:layout_constraintBottom_toTopOf="@id/lyBottomNotification"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        app:layout_constraintTop_toBottomOf="@id/lyTopNotification">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -65,18 +129,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="20sp"
+            android:text="Notificaciones"
             android:textColor="@color/default_secondary_background"
-            android:text="Notificaciones"/>
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             android:gravity="center_horizontal"
-            android:text="Activá tus notificaciones para estar informado sobre la vacuna y tus turnos."/>
+            android:text="Activá tus notificaciones para estar informado sobre la vacuna y tus turnos."
+            android:textSize="16sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -84,22 +149,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/md_grey_200"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:orientation="horizontal">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="@color/black"
             android:layout_marginStart="20dp"
-            android:text="Notificaciones"/>
+            android:layout_weight="1"
+            android:text="Notificaciones"
+            android:textColor="@color/black" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/swNotification"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
