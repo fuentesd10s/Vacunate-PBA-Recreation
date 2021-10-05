@@ -21,7 +21,7 @@ import java.util.*
 
 class AdapterItemVaccineDate(
     private val vaccineDateList: List<ModelVaccineDate>,
-    private val fragmentId: Int,
+    private val fragmentId: String,
     private val onItemVaccineClickListener: ItemVaccineClickListener
 ) :
     RecyclerView.Adapter<AdapterItemVaccineDate.ViewHolderVaccineDate>() {
@@ -103,19 +103,19 @@ class AdapterItemVaccineDate(
             }
 
             when (fragmentId) {
-                HomeFragment().id -> {
+                HomeFragment().javaClass.name -> {
                     if (modelVaccineDate.status == VaccineDateStatus.ATTENDED || modelVaccineDate.status == VaccineDateStatus.CANCELLED)
                         b.statusAttendedOrCanceled.visibility = View.GONE
 
                     b.tvLotNumber.hide()
                 }
-                MyDatesFragment().id -> {
+                MyDatesFragment().javaClass.name -> {
                     //Aca solo van a ir PENDIENTES asi que siempre se debe mostrar para cancelar!
 
                     b.tvCancelDate.show()
                     b.tvLotNumber.hide()
                 }
-                MyVaccinesFragment().id -> {
+                MyVaccinesFragment().javaClass.name -> {
                     //Aca solo se van a mostrar las ATENDIDAS asi que el boton para cancelar desaparece y aparece el numero de lote siempre!
 
                     b.tvLotNumber.show()

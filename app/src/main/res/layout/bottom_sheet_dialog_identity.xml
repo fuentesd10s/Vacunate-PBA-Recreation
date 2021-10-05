@@ -14,6 +14,7 @@
         android:text="Identidad autopercibida"/>
 
     <RadioGroup
+        android:id="@+id/rgGenders"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:checkedButton="@id/rbMale">
@@ -29,6 +30,7 @@
             android:text="Varon"/>
 
         <RadioButton
+            android:id="@+id/rbWoman"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?android:selectableItemBackground"
@@ -37,6 +39,7 @@
             android:layout_marginEnd="15dp"
             android:text="Mujer"/>
         <RadioButton
+            android:id="@+id/rbMaleTrans"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?android:selectableItemBackground"
@@ -45,6 +48,7 @@
             android:layout_marginEnd="15dp"
             android:text="Varon trans"/>
         <RadioButton
+            android:id="@+id/rbWomanTransTransv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?android:selectableItemBackground"
@@ -53,6 +57,7 @@
             android:layout_marginEnd="15dp"
             android:text="Mujer trans/travesti"/>
         <RadioButton
+            android:id="@+id/rbOther"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?android:selectableItemBackground"

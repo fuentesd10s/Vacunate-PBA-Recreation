@@ -47,7 +47,7 @@ class HomeFragment : Fragment(R.layout.fragment_home),
 
         for (i in 1..3) vaccineDateList.add(ModelVaccineDate().getExample())
 
-        mAdapter = AdapterItemVaccineDate(vaccineDateList, this.id, this)
+        mAdapter = AdapterItemVaccineDate(vaccineDateList, this.javaClass.name, this)
         b.rvAttendedVaccineDates.adapter = mAdapter
     }
 
