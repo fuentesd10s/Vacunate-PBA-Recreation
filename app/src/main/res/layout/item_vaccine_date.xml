@@ -139,10 +139,11 @@
                         android:background="?android:attr/selectableItemBackground"
                         android:gravity="center_vertical"
                         android:maxLines="2"
-                        android:text="Quiero cancelar mi turno"
+                        android:text="@string/item_vaccine_date_btn_cancel"
                         android:textColor="@color/black"
                         android:textSize="12sp"
-                        app:drawableStartCompat="@drawable/ic_calendar_cancel" />
+                        app:drawableStartCompat="@drawable/ic_calendar_cancel"
+                        app:drawableTint="@color/default_secondary_background" />
                 </LinearLayout>
             </LinearLayout>
 
