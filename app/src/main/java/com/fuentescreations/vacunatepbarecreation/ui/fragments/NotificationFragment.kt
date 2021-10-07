@@ -2,11 +2,7 @@ package com.fuentescreations.vacunatepbarecreation.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.CompoundButton
-import android.widget.RadioGroup
 import com.fuentescreations.vacunatepbarecreation.R
 import com.fuentescreations.vacunatepbarecreation.databinding.FragmentNotificationBinding
 import com.fuentescreations.vacunatepbarecreation.utils.hide
@@ -22,13 +18,23 @@ class NotificationFragment : Fragment(R.layout.fragment_notification) {
 
         setupSwitchNotification()
 
-        setupMainCheckBox()
+        setupCheckBoxes()
     }
 
-    private fun setupMainCheckBox() {
+    private fun setupCheckBoxes() {
         b.cbSelectAllMessages.setOnCheckedChangeListener { _, boolean ->
             b.cbMessage.isChecked = boolean
+            deleteIconVisibility(boolean)
         }
+
+        b.cbMessage.setOnCheckedChangeListener { _, boolean ->
+            deleteIconVisibility(boolean)
+        }
+    }
+
+    private fun deleteIconVisibility(boolean: Boolean){
+        if (boolean) b.ivDelete.show()
+        else b.ivDelete.hide()
     }
 
     private fun setupSwitchNotification() {

@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:strokeColor="@color/md_grey_500"
+        app:strokeColor="@color/md_grey_300"
         app:strokeWidth="0.5dp">
 
         <LinearLayout
@@ -143,7 +143,7 @@
                         android:textColor="@color/black"
                         android:textSize="12sp"
                         app:drawableStartCompat="@drawable/ic_calendar_cancel"
-                        app:drawableTint="@color/default_secondary_background" />
+                        app:drawableTint="@color/color_primary" />
                 </LinearLayout>
             </LinearLayout>
 

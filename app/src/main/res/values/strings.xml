@@ -3,4 +3,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home_fragment_name">¡Hola, <font color='#00838f'><b>Gonzalo Rafael!</b></font></string>
     <string name="item_vaccine_date_btn_cancel"><font color='#00838f'><u>Quiero cancelar mi turno</u></font></string>
+    <string name="home_not_available_date_message">Te damos la bienvenida al plan de Vacunación COVID-19.\n\nUna vez que las dosis esten disponibles y el cronograma de vacunación esté confirmado, recibirás una notificación.\n\n<font color='000'>¡Muchas Gracias!</font></string>
 </resources>
