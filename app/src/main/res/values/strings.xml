@@ -4,4 +4,8 @@
     <string name="home_fragment_name">¡Hola, <font color='#00838f'><b>Gonzalo Rafael!</b></font></string>
     <string name="item_vaccine_date_btn_cancel"><font color='#00838f'><u>Quiero cancelar mi turno</u></font></string>
     <string name="home_not_available_date_message">Te damos la bienvenida al plan de Vacunación COVID-19.\n\nUna vez que las dosis esten disponibles y el cronograma de vacunación esté confirmado, recibirás una notificación.\n\n<font color='000'>¡Muchas Gracias!</font></string>
+    <string name="citizenship_number_btn_label"><u>¿Cómo obtengo mi número de ciudadanía?</u></string>
+    <string name="sign_up_title">¡Hola, te damos la bienvenida al\n<font color='#00838f'><b>Plan de Vacunación Covid-19!</b></font></string>
+    <string name="sign_up_btn_help_label"><u>¿Cómo obtengo mi número de trámite?</u></string>
+    <string name="sign_up_terms_conditions_text">Al darle click sobre <font color='#9E9E9E'>iniciar sesión</font> aceptás <u><font color='#00838f'>terminos y condiciones de la aplicación</font></u></string>
 </resources>

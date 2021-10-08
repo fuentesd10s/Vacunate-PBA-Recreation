@@ -11,6 +11,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:lineSpacingExtra="5dp"
+        android:textColor="@color/color_secondary"
+        android:textStyle="bold"
         android:text="Para acceder a más información usá la camára para escanear el QR o ingresá de tu número de ciudadanía, ambos se encuentran en tu credencial."
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/lyMiddleCitizienShipNumber"
@@ -51,11 +53,12 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnHowToGetCitizenshipNumber"
             style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="¿Cómo obtengo mi número de ciudadanía?"
+            android:text="@string/citizenship_number_btn_label"
             android:textAllCaps="false"
             android:textSize="12sp"
+            android:textStyle="bold"
             app:icon="@drawable/ic_help"
             app:iconGravity="textEnd"
             app:iconSize="18dp" />

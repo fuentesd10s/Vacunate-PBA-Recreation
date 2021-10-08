@@ -19,7 +19,7 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
         b.btnHowToGetTramitNumber.setOnClickListener {
 
             AlertDialog.Builder(requireContext())
-                .setTitle("El número de trámite se encuentra en el frente o dorso de tu documento.")
+                .setMessage("El número de trámite se encuentra en el frente o dorso de tu documento.")
                 .setView(
                     ImageView(requireContext()).apply {
                     this.setImageResource(R.drawable.dni)
