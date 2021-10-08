@@ -4,4 +4,12 @@
     <style name="style_items_menu_nav_view_font">
         <item name="fontFamily">@font/default_font</item>
     </style>
+
+    <style name="SplashTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="colorPrimary">@color/color_logo</item>
+        <item name="colorPrimaryDark">@color/color_logo</item>
+        <item name="colorAccent">@color/color_logo</item>
+        <item name="android:statusBarColor">@color/color_logo</item>
+    </style>
 </resources>

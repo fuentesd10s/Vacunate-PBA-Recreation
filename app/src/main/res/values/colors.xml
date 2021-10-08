@@ -11,6 +11,7 @@
     <color name="color_primary">#00AEC3</color>
     <color name="color_secondary">#00838f</color>
     <color name="color_accent">#ed277f</color>
+    <color name="color_logo">#00b7c5</color>
 
     <!--reds-->
     <color name="md_red_50">#FFEBEE</color>

@@ -21,4 +21,11 @@
         <item name="android:fontFamily">@font/default_font</item>
         <item name="android:windowBackground">@color/md_grey_50</item>
     </style>
+    <style name="Theme.VacunatePBARecreation.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.VacunatePBARecreation.AppBarOverlay"
+        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.VacunatePBARecreation.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

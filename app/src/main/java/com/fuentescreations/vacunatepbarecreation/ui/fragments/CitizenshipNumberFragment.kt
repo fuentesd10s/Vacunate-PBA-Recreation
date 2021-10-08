@@ -8,6 +8,7 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.ImageView
+import androidx.navigation.fragment.findNavController
 import com.fuentescreations.vacunatepbarecreation.R
 import com.fuentescreations.vacunatepbarecreation.databinding.FragmentCitizenshipNumberBinding
 import io.github.g00fy2.quickie.QRResult
@@ -24,27 +25,22 @@ class CitizenshipNumberFragment : Fragment(R.layout.fragment_citizenship_number)
 
         b = FragmentCitizenshipNumberBinding.bind(view)
 
-        b.btnHowToGetCitizenshipNumber.setOnClickListener {
-            AlertDialog.Builder(requireContext())
-                .setView(
-                    ImageView(requireContext()).apply {
-                        this.setImageResource(R.drawable.citizenship_number)
-                        this.adjustViewBounds = true
-                    })
-                .setPositiveButton("Ok") { d, _ ->
-                    d.dismiss()
-                }
-                .show()
+        setupBtnHowToGetCitizenshipNumber()
+
+        setupTilCitizenshipNumber()
+
+        b.btnSentCitizenshipNumber.setOnClickListener {
+            findNavController().navigate(CitizenshipNumberFragmentDirections.actionCitizenshipNumberFragmentToHomeFragment())
         }
+    }
 
-
-
+    private fun setupTilCitizenshipNumber() {
         b.tilCitizenshipNumber.setEndIconOnClickListener {
             scanCustomCode.launch(
                 ScannerConfig.build {
-                    setOverlayStringRes(R.string.app_name) // string resource used for the scanner overlay
-                    setOverlayDrawableRes(R.drawable.ic_camera) // drawable resource used for the scanner overlay
-                    setShowTorchToggle(true) // show or hide (default) torch/flashlight toggle button
+                    setOverlayStringRes(R.string.app_name)
+                    setOverlayDrawableRes(R.drawable.ic_camera)
+                    setShowTorchToggle(true)
                 }
             )
         }
@@ -61,10 +57,26 @@ class CitizenshipNumberFragment : Fragment(R.layout.fragment_citizenship_number)
         })
     }
 
+    private fun setupBtnHowToGetCitizenshipNumber() {
+        b.btnHowToGetCitizenshipNumber.setOnClickListener {
+            AlertDialog.Builder(requireContext())
+                .setView(
+                    ImageView(requireContext()).apply {
+                        this.setImageResource(R.drawable.citizenship_number)
+                        this.adjustViewBounds = true
+                    })
+                .setPositiveButton("Ok") { d, _ ->
+                    d.dismiss()
+                }
+                .show()
+        }
+    }
+
     private fun handleResult(qrResult: QRResult) {
         when (qrResult){
             is QRResult.QRSuccess ->{
                 Log.d("GONZA","QR DETECTED")
+                b.etCitizenshipNumber.setText(qrResult.content.rawValue)
             }
             QRResult.QRUserCanceled -> {
                 Log.d("GONZA","QR CANCELED")
