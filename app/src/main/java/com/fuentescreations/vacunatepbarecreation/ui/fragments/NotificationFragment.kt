@@ -1,8 +1,11 @@
 package com.fuentescreations.vacunatepbarecreation.ui.fragments
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import com.fuentescreations.vacunatepbarecreation.R
 import com.fuentescreations.vacunatepbarecreation.databinding.FragmentNotificationBinding
 import com.fuentescreations.vacunatepbarecreation.utils.hide
@@ -19,6 +22,10 @@ class NotificationFragment : Fragment(R.layout.fragment_notification) {
         setupSwitchNotification()
 
         setupCheckBoxes()
+    }
+
+    private fun switchProgressBar() {
+
     }
 
     private fun setupCheckBoxes() {
@@ -49,13 +56,31 @@ class NotificationFragment : Fragment(R.layout.fragment_notification) {
         }
 
         b.swNotification.setOnCheckedChangeListener { _, isChecked ->
+            b.progressBar.show()
 
             if (isChecked) {
-                b.lyNotificationDisabled.hide()
-                b.lyTopNotification.show()
+                Handler(Looper.getMainLooper()).postDelayed(
+                    {
+                        view?.post {
+                            b.lyNotificationDisabled.hide()
+                            b.lyTopNotification.show()
+                            b.progressBar.hide()
+                        }
+                    }, 2000
+                )
+
             } else {
-                b.lyTopNotification.hide()
-                b.lyNotificationDisabled.show()
+
+                Handler(Looper.getMainLooper()).postDelayed(
+                    {
+                        view?.post {
+                            b.lyTopNotification.hide()
+                            b.lyNotificationDisabled.show()
+                            b.progressBar.hide()
+                        }
+                    }, 2000
+                )
+
             }
         }
     }

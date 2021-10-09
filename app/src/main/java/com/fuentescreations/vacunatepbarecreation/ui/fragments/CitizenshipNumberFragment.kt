@@ -2,6 +2,8 @@ package com.fuentescreations.vacunatepbarecreation.ui.fragments
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
@@ -11,6 +13,8 @@ import android.widget.ImageView
 import androidx.navigation.fragment.findNavController
 import com.fuentescreations.vacunatepbarecreation.R
 import com.fuentescreations.vacunatepbarecreation.databinding.FragmentCitizenshipNumberBinding
+import com.fuentescreations.vacunatepbarecreation.utils.hide
+import com.fuentescreations.vacunatepbarecreation.utils.show
 import io.github.g00fy2.quickie.QRResult
 import io.github.g00fy2.quickie.ScanCustomCode
 import io.github.g00fy2.quickie.config.ScannerConfig
@@ -30,8 +34,20 @@ class CitizenshipNumberFragment : Fragment(R.layout.fragment_citizenship_number)
         setupTilCitizenshipNumber()
 
         b.btnSentCitizenshipNumber.setOnClickListener {
-            findNavController().navigate(CitizenshipNumberFragmentDirections.actionCitizenshipNumberFragmentToHomeFragment())
+            navigateAction()
         }
+    }
+
+    private fun navigateAction() {
+        b.progressBar.show()
+        Handler(Looper.getMainLooper()).postDelayed(
+            {
+                view?.post {
+                    findNavController().navigate(CitizenshipNumberFragmentDirections.actionCitizenshipNumberFragmentToHomeFragment())
+                    b.progressBar.hide()
+                }
+            }, 2000
+        )
     }
 
     private fun setupTilCitizenshipNumber() {

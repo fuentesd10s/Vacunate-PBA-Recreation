@@ -2,6 +2,8 @@ package com.fuentescreations.vacunatepbarecreation.ui.fragments
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.ImageView
@@ -9,6 +11,8 @@ import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.findNavController
 import com.fuentescreations.vacunatepbarecreation.R
 import com.fuentescreations.vacunatepbarecreation.databinding.FragmentSignUpBinding
+import com.fuentescreations.vacunatepbarecreation.utils.hide
+import com.fuentescreations.vacunatepbarecreation.utils.show
 
 class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
 
@@ -24,8 +28,21 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
         setupPressBackButton()
 
         b.btnSignIn.setOnClickListener {
-            findNavController().navigate(SignUpFragmentDirections.actionSignUpFragmentToCitizenshipNumberFragment())
+            navigateAction()
         }
+    }
+
+    private fun navigateAction() {
+        b.progressBar.show()
+        Handler(Looper.getMainLooper()).postDelayed(
+            {
+                view?.post {
+                    findNavController().navigate(SignUpFragmentDirections.actionSignUpFragmentToCitizenshipNumberFragment())
+                    b.progressBar.hide()
+                }
+            }, 2000
+        )
+
     }
 
     private fun setupPressBackButton() {

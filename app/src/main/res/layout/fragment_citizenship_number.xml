@@ -52,11 +52,11 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnHowToGetCitizenshipNumber"
             style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/citizenship_number_btn_label"
             android:textAllCaps="false"
-            android:textSize="12sp"
+            android:textSize="10sp"
             android:textStyle="bold"
             app:icon="@drawable/ic_help"
             app:iconGravity="textEnd"
@@ -127,10 +127,11 @@
         app:layout_constraintGuide_end="20dp" />
 
     <ProgressBar
+        android:id="@+id/progressBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#90FFFFFF"
-        android:padding="160dp"
+        android:padding="130dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

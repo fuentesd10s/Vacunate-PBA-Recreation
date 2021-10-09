@@ -33,7 +33,7 @@
         android:layout_gravity="center"
         android:text="@string/sign_up_title"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/lyMiddleSignUp"
@@ -85,7 +85,7 @@
             android:layout_height="wrap_content"
             android:text="@string/sign_up_btn_help_label"
             android:textAllCaps="false"
-            android:textSize="12sp"
+            android:textSize="10sp"
             app:icon="@drawable/ic_help"
             android:textStyle="bold"
             app:iconGravity="textEnd"
@@ -233,10 +233,11 @@
     </LinearLayout>
 
     <ProgressBar
+        android:id="@+id/progressBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#90FFFFFF"
-        android:padding="160dp"
+        android:padding="130dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
