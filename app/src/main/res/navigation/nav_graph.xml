@@ -12,7 +12,11 @@
 
         <action
             android:id="@+id/action_startFragment_to_signUpFragment"
-            app:destination="@id/signUpFragment" />
+            app:destination="@id/signUpFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
@@ -22,10 +26,18 @@
 
         <action
             android:id="@+id/action_signUpFragment_to_termsAndConditionsFragment"
-            app:destination="@id/termsAndConditionsFragment" />
+            app:destination="@id/termsAndConditionsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_signUpFragment_to_citizenshipNumberFragment"
-            app:destination="@id/citizenshipNumberFragment" />
+            app:destination="@id/citizenshipNumberFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/termsAndConditionsFragment"
@@ -40,7 +52,11 @@
 
         <action
             android:id="@+id/action_citizenshipNumberFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"/>
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -50,7 +66,11 @@
 
         <action
             android:id="@+id/action_homeFragment_to_notificationFragment"
-            app:destination="@id/notificationFragment" />
+            app:destination="@id/notificationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/myAccountFragment"
@@ -59,7 +79,11 @@
         tools:layout="@layout/fragment_my_data" >
         <action
             android:id="@+id/action_myAccountFragment_to_personalDataFragment"
-            app:destination="@id/personalDataFragment" />
+            app:destination="@id/personalDataFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/notificationFragment"

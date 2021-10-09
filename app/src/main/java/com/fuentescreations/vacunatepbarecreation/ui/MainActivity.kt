@@ -14,6 +14,14 @@ import com.fuentescreations.vacunatepbarecreation.databinding.ActivityMainBindin
 import com.fuentescreations.vacunatepbarecreation.ui.fragments.*
 import com.fuentescreations.vacunatepbarecreation.utils.hide
 import com.fuentescreations.vacunatepbarecreation.utils.show
+import android.animation.Animator
+
+import android.animation.AnimatorListenerAdapter
+
+import android.view.animation.LinearInterpolator
+
+
+
 
 class MainActivity : AppCompatActivity() {
 

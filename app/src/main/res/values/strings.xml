@@ -9,7 +9,6 @@
     <string name="sign_up_btn_help_label"><u>¿Cómo obtengo mi número de trámite?</u></string>
     <string name="sign_up_terms_conditions_text">Al darle click sobre <font color='#9E9E9E'>iniciar sesión</font> aceptás <u><font color='#00838f'>terminos y condiciones de la aplicación</font></u></string>
     <string name="sign_up_bottom_text"><u><font color='#00838f'>Completá el formulario para registrarte</font></u> y reservar un lugar para vacunarte</string>
-    <string name="title_activity_splash_screen">SplashScreenActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>

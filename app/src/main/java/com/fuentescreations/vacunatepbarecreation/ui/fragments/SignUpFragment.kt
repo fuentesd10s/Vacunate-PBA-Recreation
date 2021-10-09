@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.ImageView
+import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.findNavController
 import com.fuentescreations.vacunatepbarecreation.R
 import com.fuentescreations.vacunatepbarecreation.databinding.FragmentSignUpBinding
@@ -18,14 +19,22 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
         b = FragmentSignUpBinding.bind(view)
 
         setupBtnHowToGetTramitNumber()
-
         setupGendersButtons()
-
         setupTermsConditionsCheckBox()
+        setupPressBackButton()
 
         b.btnSignIn.setOnClickListener {
             findNavController().navigate(SignUpFragmentDirections.actionSignUpFragmentToCitizenshipNumberFragment())
         }
+    }
+
+    private fun setupPressBackButton() {
+        val callback: OnBackPressedCallback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                requireActivity().finish()
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
     }
 
     private fun setupTermsConditionsCheckBox() {

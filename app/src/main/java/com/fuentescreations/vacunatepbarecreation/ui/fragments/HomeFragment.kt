@@ -18,6 +18,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import android.content.Intent
 import android.net.Uri
+import androidx.activity.OnBackPressedCallback
 import androidx.navigation.Navigator
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
@@ -31,7 +32,6 @@ class HomeFragment : Fragment(R.layout.fragment_home),
 
     private lateinit var b: FragmentHomeBinding
     private lateinit var mAdapter: AdapterItemVaccineDate
-    val TAG = "GONZA"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -40,6 +40,25 @@ class HomeFragment : Fragment(R.layout.fragment_home),
 
         setupBtnTimer()
         setupRv()
+        setupPressBackButton()
+    }
+
+    private fun setupPressBackButton() {
+        val callback: OnBackPressedCallback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                AlertDialog.Builder(requireContext())
+                    .setTitle("¿Está seguro que desea salir de la aplicación?")
+                    .setPositiveButton("Si"){d,_->
+                        requireActivity().finish()
+                        d.dismiss()
+                    }
+                    .setNegativeButton("No"){d,_->
+                        d.dismiss()
+                    }
+                    .show()
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
     }
 
     private fun setupRv() {
