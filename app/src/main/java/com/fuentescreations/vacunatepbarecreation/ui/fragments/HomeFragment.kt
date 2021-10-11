@@ -24,6 +24,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.onNavDestinationSelected
+import com.fuentescreations.vacunatepbarecreation.utils.DosesNumber
 import com.google.android.material.navigation.NavigationView
 
 
@@ -64,7 +65,34 @@ class HomeFragment : Fragment(R.layout.fragment_home),
     private fun setupRv() {
         val vaccineDateList = mutableListOf<ModelVaccineDate>()
 
-        for (i in 1..3) vaccineDateList.add(ModelVaccineDate().getExample())
+        //for (i in 1..3) vaccineDateList.add(ModelVaccineDate().getExample())
+
+        vaccineDateList.add(
+            ModelVaccineDate(VaccineDateStatus.ATTENDED,
+            DosesNumber.FIRST,
+            "27/09/2019 23:59 hs",
+            "Hospital General de Agudos Dr. Ignacio Pirovano",
+            "Av. Monroe 3555, CABA",
+            null)
+        )
+
+        vaccineDateList.add(
+            ModelVaccineDate(VaccineDateStatus.ATTENDED,
+                DosesNumber.SECOND,
+                "27/10/2019 23:59 hs",
+                "Hospital General de Agudos Dr. Ignacio Pirovano",
+                "Av. Monroe 3555, CABA",
+                null)
+        )
+
+        vaccineDateList.add(
+            ModelVaccineDate(VaccineDateStatus.PENDING,
+                DosesNumber.THIRD,
+                "27/11/2019 16:00 hs",
+                "Hospital General de Agudos Dr. Ignacio Pirovano",
+                "Av. Monroe 3555, CABA",
+                null)
+        )
 
         mAdapter = AdapterItemVaccineDate(vaccineDateList, this.javaClass.name, this)
         b.rvAttendedVaccineDates.adapter = mAdapter

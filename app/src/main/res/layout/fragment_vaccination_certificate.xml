@@ -175,7 +175,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    app:layout_constraintBottom_toTopOf="@+id/lyThirdDoseCertificate"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/lyFirstDoseCertificate">
@@ -244,79 +244,79 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/lyThirdDoseCertificate"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/lySecondDoseCertificate">
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/lyThirdDoseCertificate"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/lySecondDoseCertificate">-->
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/color_accent"
-                        android:padding="5dp"
-                        android:text="Tercera dosis"
-                        android:textColor="@color/white"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:background="@color/color_accent"-->
+<!--                        android:padding="5dp"-->
+<!--                        android:text="Tercera dosis"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="12sp"-->
+<!--                        android:textStyle="bold" />-->
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:orientation="horizontal">
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_margin="5dp"-->
+<!--                        android:orientation="horizontal">-->
 
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:orientation="vertical">-->
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Vacuna:"
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="Vacuna:"-->
+<!--                                android:textSize="12sp"-->
+<!--                                android:textStyle="bold" />-->
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Sinopharm"
-                                android:textColor="@color/black"
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="Sinopharm"-->
+<!--                                android:textColor="@color/black"-->
+<!--                                android:textSize="12sp"-->
+<!--                                android:textStyle="bold" />-->
+<!--                        </LinearLayout>-->
 
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:orientation="vertical">-->
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Fecha:"
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="Fecha:"-->
+<!--                                android:textSize="12sp"-->
+<!--                                android:textStyle="bold" />-->
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="27/11/2019"
-                                android:textColor="@color/black"
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="27/11/2019"-->
+<!--                                android:textColor="@color/black"-->
+<!--                                android:textSize="12sp"-->
+<!--                                android:textStyle="bold" />-->
+<!--                        </LinearLayout>-->
 
-                    </LinearLayout>
+<!--                    </LinearLayout>-->
 
-                </LinearLayout>
+<!--                </LinearLayout>-->
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>

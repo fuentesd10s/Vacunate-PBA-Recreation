@@ -60,7 +60,7 @@ class AdapterItemVaccineDate(
             b.tvVaccineDose.text = modelVaccineDate.dosesNumber.value
             b.tvHospitalName.text = modelVaccineDate.hospitalName
             b.tvAddress.text = modelVaccineDate.address
-            b.tvDate.text = modelVaccineDate.date?.let { getDateFromMillis(it) }
+            b.tvDate.text = modelVaccineDate.date
 
             when (modelVaccineDate.status) {
                 VaccineDateStatus.ATTENDED -> {
@@ -143,12 +143,12 @@ class AdapterItemVaccineDate(
 
         private fun getColor(color: Int): Int = ContextCompat.getColor(mContext, color)
 
-        private fun getDateFromMillis(milliSeconds: Long): String {
-            val calendar = Calendar.getInstance().apply {
-                this.timeInMillis = milliSeconds
-            }
-
-            return SimpleDateFormat("dd/MM/yyyy mm:ss").format(calendar.time)
-        }
+//        private fun getDateFromMillis(milliSeconds: Long): String {
+//            val calendar = Calendar.getInstance().apply {
+//                this.timeInMillis = milliSeconds
+//            }
+//
+//            return SimpleDateFormat("dd/MM/yyyy mm:ss").format(calendar.time)
+//        }
     }
 }

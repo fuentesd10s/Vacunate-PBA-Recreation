@@ -45,6 +45,7 @@
                 android:id="@+id/etCitizenshipNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="textCapCharacters"
                 android:maxLength="10" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -60,7 +61,7 @@
             android:textStyle="bold"
             app:icon="@drawable/ic_help"
             app:iconGravity="textEnd"
-            app:iconSize="18dp" />
+            app:iconSize="16dp" />
     </LinearLayout>
 
     <LinearLayout

@@ -89,7 +89,7 @@
             app:icon="@drawable/ic_help"
             android:textStyle="bold"
             app:iconGravity="textEnd"
-            app:iconSize="18dp" />
+            app:iconSize="16dp" />
 
     </LinearLayout>
 

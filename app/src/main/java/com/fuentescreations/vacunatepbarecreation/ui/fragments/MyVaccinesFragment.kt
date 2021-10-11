@@ -11,6 +11,8 @@ import com.fuentescreations.vacunatepbarecreation.databinding.FragmentMyVaccines
 import com.fuentescreations.vacunatepbarecreation.models.ModelVaccineDate
 import com.fuentescreations.vacunatepbarecreation.models.getExample
 import com.fuentescreations.vacunatepbarecreation.utils.ClassesEnum
+import com.fuentescreations.vacunatepbarecreation.utils.DosesNumber
+import com.fuentescreations.vacunatepbarecreation.utils.VaccineDateStatus
 import com.google.android.gms.maps.model.LatLng
 
 class MyVaccinesFragment : Fragment(R.layout.fragment_my_vaccines),
@@ -29,7 +31,27 @@ class MyVaccinesFragment : Fragment(R.layout.fragment_my_vaccines),
     private fun setupRv() {
         val vaccineDateList = mutableListOf<ModelVaccineDate>()
 
-        for (i in 1..3) vaccineDateList.add(ModelVaccineDate().getExample())
+        //for (i in 1..3) vaccineDateList.add(ModelVaccineDate().getExample())
+
+        vaccineDateList.add(
+            ModelVaccineDate(
+                VaccineDateStatus.ATTENDED,
+                DosesNumber.FIRST,
+                "27/09/2019 23:59 hs",
+                "Hospital General de Agudos Dr. Ignacio Pirovano",
+                "Av. Monroe 3555, CABA",
+                null)
+        )
+
+        vaccineDateList.add(
+            ModelVaccineDate(
+                VaccineDateStatus.ATTENDED,
+                DosesNumber.SECOND,
+                "27/10/2019 23:59 hs",
+                "Hospital General de Agudos Dr. Ignacio Pirovano",
+                "Av. Monroe 3555, CABA",
+                null)
+        )
 
         mAdapter = AdapterItemVaccineDate(vaccineDateList, this.javaClass.name, this)
         b.rvMyVaccines.adapter = mAdapter
