@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.trackingFragment,
                 R.id.vaccinationCertificateFragment,
                 R.id.personalDataFragment,
+                R.id.citizenshipNumberFragment,
                 R.id.notificationFragment -> {
                     hideNotificationIcon()
                     showTopBarAndNavigationDrawer()
@@ -96,6 +97,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.myVaccinesFragment,
                 R.id.myDatesFragment,
                 R.id.vaccinationCertificateFragment,
+                R.id.citizenshipNumberFragment,
                 R.id.trackingFragment
             ), b.drawerLayout
         )

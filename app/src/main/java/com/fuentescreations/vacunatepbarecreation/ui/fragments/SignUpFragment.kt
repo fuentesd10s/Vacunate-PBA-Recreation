@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.ImageView
 import androidx.activity.OnBackPressedCallback
+import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import com.fuentescreations.vacunatepbarecreation.R
 import com.fuentescreations.vacunatepbarecreation.databinding.FragmentSignUpBinding
@@ -64,11 +65,23 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
         b.lyMaleSignUp.setOnClickListener {
             b.rbFemaleSignUp.isChecked = false
             b.rbMaleSignUp.isChecked = true
+
+            b.ivFemaleIcon.setColorFilter(ContextCompat.getColor(requireContext(),R.color.md_blue_grey_700))
+            b.tvFemale.setTextColor(ContextCompat.getColor(requireContext(),R.color.md_blue_grey_600))
+
+            b.tvMale.setTextColor(ContextCompat.getColor(requireContext(),R.color.color_accent))
+            b.ivMaleIcon.setColorFilter(ContextCompat.getColor(requireContext(),R.color.color_accent))
         }
 
         b.lyFemaleSignUp.setOnClickListener {
             b.rbFemaleSignUp.isChecked = true
             b.rbMaleSignUp.isChecked = false
+
+            b.ivFemaleIcon.setColorFilter(ContextCompat.getColor(requireContext(),R.color.color_accent))
+            b.tvFemale.setTextColor(ContextCompat.getColor(requireContext(),R.color.color_accent))
+
+            b.tvMale.setTextColor(ContextCompat.getColor(requireContext(),R.color.md_blue_grey_600))
+            b.ivMaleIcon.setColorFilter(ContextCompat.getColor(requireContext(),R.color.md_blue_grey_700))
         }
     }
 

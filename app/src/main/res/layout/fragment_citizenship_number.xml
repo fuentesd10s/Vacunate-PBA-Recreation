@@ -14,7 +14,7 @@
         android:textColor="@color/color_secondary"
         android:textStyle="bold"
         android:text="Para acceder a más información usá la camára para escanear el QR o ingresá de tu número de ciudadanía, ambos se encuentran en tu credencial."
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/lyMiddleCitizienShipNumber"
         app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
         app:layout_constraintStart_toStartOf="@id/guidelineStart"
